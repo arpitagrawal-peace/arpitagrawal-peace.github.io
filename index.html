@@ -1,12 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Arpit Agrawal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arpit Agrawal | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { background: #1e293b; border: 1px solid #334155; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+    </style>
 </head>
 <body>
-  <h1>Hello — this is index.html</h1>
-  <p>Created by arpitagrawal-peace.</p>
+    <nav class="fixed w-full z-50 bg-slate-900/80 backdrop-blur-md p-4 border-b border-slate-700">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <span class="text-xl font-bold gradient-text">AA.</span>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-sky-400">About</a>
+                <a href="#experience" class="hover:text-sky-400">Experience</a>
+                <a href="#awards" class="hover:text-sky-400">Awards</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="about" class="pt-32 pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">Arpit <span class="gradient-text">Agrawal</span></h1>
+            [span_2](start_span)<p class="text-xl text-slate-400 mb-8">Manager, Transformation FS (Customer & Operations) at KPMG India[span_2](end_span)</p>
+            <div class="flex justify-center gap-4">
+                [span_3](start_span)<a href="mailto:arpitagrawall102@gmail.com" class="bg-sky-500 hover:bg-sky-600 px-6 py-3 rounded-full font-bold text-white transition">Get in Touch[span_3](end_span)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-12 bg-slate-900">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 px-4 text-center">
+            [span_4](start_span)<div><h3 class="text-3xl font-bold text-sky-400">8X</h3><p class="text-sm text-slate-400">Referral Growth[span_4](end_span)</p></div>
+            [span_5](start_span)<div><h3 class="text-3xl font-bold text-sky-400">₹50Cr</h3><p class="text-sm text-slate-400">OpEx Saved[span_5](end_span)</p></div>
+            [span_6](start_span)<div><h3 class="text-3xl font-bold text-sky-400">50%</h3><p class="text-sm text-slate-400">TAT Reduction[span_6](end_span)</p></div>
+            [span_7](start_span)<div><h3 class="text-3xl font-bold text-sky-400">8</h3><p class="text-sm text-slate-400">Languages Launched[span_7](end_span)</p></div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 border-l-4 border-sky-500 pl-4">Professional Journey</h2>
+            
+            <div class="card p-6 rounded-xl mb-8">
+                <div class="flex justify-between mb-4">
+                    [span_8](start_span)<h3 class="text-xl font-bold text-sky-400">KPMG India[span_8](end_span)</h3>
+                    [span_9](start_span)<span class="text-slate-500">2022 - Present[span_9](end_span)</span>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-slate-300">
+                    [span_10](start_span)<li>Redesigned business processes to save INR 50Cr in operational expenses[span_10](end_span).</li>
+                    [span_11](start_span)<li>Created a 5-year business plan and growth strategy blueprint for a Small Finance Bank[span_11](end_span).</li>
+                    [span_12](start_span)<li>Managed digital auto-loan PWA implementation, reducing processing TAT by 30%[span_12](end_span).</li>
+                </ul>
+            </div>
+
+            <div class="card p-6 rounded-xl mb-8">
+                <div class="flex justify-between mb-4">
+                    [span_13](start_span)<h3 class="text-xl font-bold text-sky-400">Angel One[span_13](end_span)</h3>
+                    [span_14](start_span)<span class="text-slate-500">2019 - 2021[span_14](end_span)</span>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-slate-300">
+                    [span_15](start_span)<li>Successfully launched industry-first trading mobile app in 8 Indian languages[span_15](end_span).</li>
+                    [span_16](start_span)<li>Scaled referral contribution from 15% to 40% of overall sales[span_16](end_span).</li>
+                    [span_17](start_span)<li>Led organization-wide design thinking projects for tier-2/3 city penetration[span_17](end_span).</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-20 bg-slate-900/50 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            [span_18](start_span)<h2 class="text-3xl font-bold mb-12">Awards & Recognition[span_18](end_span)</h2>
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                [span_19](start_span)<div class="card p-4 rounded-lg">🏆 CEO Award - Employee of the Year (Angel One)[span_19](end_span)</div>
+                [span_20](start_span)<div class="card p-4 rounded-lg">🏆 KPMG Impact Award (Partner Recognition)[span_20](end_span)</div>
+                [span_21](start_span)<div class="card p-4 rounded-lg">🏆 PwC RnR Award (Implementation Project)[span_21](end_span)</div>
+                [span_22](start_span)<div class="card p-4 rounded-lg">🏆 KPMG Kudos Award (NSDL Project)[span_22](end_span)</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-slate-800 text-slate-500 text-sm">
+        <p>© 2026 Arpit Agrawal. Built with GitHub Pages.</p>
+    </footer>
 </body>
 </html>
