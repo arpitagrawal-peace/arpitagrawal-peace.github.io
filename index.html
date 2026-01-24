@@ -3,119 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arpit Agrawal | Digital Transformation Leader</title>
+    <title>Arpit Agrawal | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0a0c10; color: #f8fafc; }
-        .glass { background: rgba(30, 41, 59, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .accent-gradient { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #f3f4f6; }
+        .glass-card { background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-card:hover { border-color: #38bdf8; transform: translateY(-8px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link::after { content: ''; width: 0; height: 2px; background: #38bdf8; display: block; transition: 0.3s; }
     </style>
 </head>
-<body class="selection:bg-sky-500/30">
+<body class="overflow-x-hidden">
 
-    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/20 backdrop-blur-lg">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="text-xl font-extrabold tracking-tighter">AA<span class="text-sky-500">.</span></span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-400">
-                <a href="#experience" class="hover:text-white transition">Experience</a>
-                <a href="#awards" class="hover:text-white transition">Recognition</a>
-                <a href="mailto:arpitagrawall102@gmail.com" class="text-sky-400 hover:text-sky-300">Contact</a>
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 bg-gray-950/50 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">AA<span class="text-sky-500">.</span></div>
+            <div class="hidden md:flex space-x-10 text-sm font-medium">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="mailto:arpitagrawall102@gmail.com" class="text-sky-400">Contact</a>
             </div>
         </div>
     </nav>
 
-    <section class="pt-40 pb-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                Arpit <span class="accent-gradient">Agrawal</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-400 font-light mb-4">
-                Manager, Transformation FS at KPMG India
-            </p>
-            <p class="text-sm uppercase tracking-[0.3em] text-sky-500 font-semibold mb-12">
-                IIT Roorkee · Class of 2017
-            </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-                <div class="glass rounded-2xl p-6">
-                    <div class="text-2xl font-bold text-white mb-1">₹50Cr</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-wider">OpEx Saved</div>
-                </div>
-                <div class="glass rounded-2xl p-6">
-                    <div class="text-2xl font-bold text-white mb-1">8X</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-wider">Referral Growth</div>
-                </div>
-                <div class="glass rounded-2xl p-6">
-                    <div class="text-2xl font-bold text-white mb-1">50%</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-wider">TAT Reduction</div>
-                </div>
-                <div class="glass rounded-2xl p-6">
-                    <div class="text-2xl font-bold text-white mb-1">10%</div>
-                    <div class="text-xs text-slate-500 uppercase tracking-wider">Conv. Lift</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="experience" class="py-24 px-6 bg-[#0d1117]">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
-                Professional Path <span class="h-[1px] flex-grow bg-white/10"></span>
-            </h2>
-
-            <div class="space-y-16">
-                <div class="relative pl-8 border-l border-sky-500/30">
-                    <div class="absolute -left-[5px] top-0 w-2 h-2 rounded-full bg-sky-500 shadow-[0_0_10px_#0ea5e9]"></div>
-                    <div class="flex flex-wrap justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold text-white">KPMG India</h3>
-                        <span class="text-slate-500 text-sm font-medium">2022 — Present</span>
-                    </div>
-                    <ul class="space-y-3 text-slate-400 leading-relaxed">
-                        <li>• Saved INR 50Cr in operational expenses through process re-design.</li>
-                        <li>• Developed 5-year growth strategy blueprints for Small Finance Banks.</li>
-                        <li>• Program managed digital auto-loan PWA reducing TAT by 30%.</li>
-                        <li>• Reduced query resolution TAT by 50% through CRM implementation.</li>
-                    </ul>
-                </div>
-
-                <div class="relative pl-8 border-l border-white/10">
-                    <div class="flex flex-wrap justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold text-white">Angel One</h3>
-                        <span class="text-slate-500 text-sm font-medium">2019 — 2021</span>
-                    </div>
-                    <ul class="space-y-3 text-slate-400 leading-relaxed">
-                        <li>• Launched industry-first trading app in 8 Indian languages.</li>
-                        <li>• Scaled referral sales from 15% to 40% (8X actual growth).</li>
-                        <li>• Owned Lead Management Systems for 800+ sales force.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="awards" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center">Honors & Recognition</h2>
-            <div class="grid md:grid-cols-2 gap-4">
-                <div class="glass p-6 rounded-2xl border-l-4 border-sky-500">
-                    <p class="text-white font-semibold">CEO Award - Employee of the Year</p>
-                    <p class="text-slate-500 text-xs mt-1 uppercase">Angel One · 2021</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <p class="text-white font-semibold">Impact Award (Strategy Blueprint)</p>
-                    <p class="text-slate-500 text-xs mt-1 uppercase">KPMG · 2022</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <p class="text-white font-semibold">Kudos Award (NSDL Implementation)</p>
-                    <p class="text-slate-500 text-xs mt-1 uppercase">KPMG · 2022</p>
-                </div>
-                <div class="glass p-6 rounded-2xl">
-                    <p class="text-white font-semibold">RnR Award (Large Scale Implementation)</p>
-                    <p class="text-slate-500 text-xs mt-1 uppercase">PwC India · 2018</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 text-center border-t border-white
+    <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-4xl text-center" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-sky-500 font-semibold tracking-widest uppercase text-sm mb-4">Manager, Transformation FS</h2>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tight">Arpit <span class="gradient-text">Agrawal</span></h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-1
