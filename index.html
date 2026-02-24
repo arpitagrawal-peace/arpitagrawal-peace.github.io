@@ -3,176 +3,175 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Arpit Agrawal — Growth & Operations Specialist</title>
+  <title>Arpit Agrawal — Growth &amp; Operations Specialist</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    :root {
-      --bg:#f0f4ff; --surface:#ffffff; --navy:#2d3a6b; --violet:#6b5ea8;
-      --rose:#e86fa3; --teal:#2abfbf; --muted:#7a8299; --border:#dde3f5;
-      --text:#2c3050; --subtext:#5a6080;
-    }
+    :root{--bg:#f0f4ff;--surface:#fff;--navy:#2d3a6b;--violet:#6b5ea8;--rose:#e86fa3;--teal:#2abfbf;--muted:#7a8299;--border:#dde3f5;--text:#2c3050;--subtext:#5a6080;}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:400;line-height:1.65;overflow-x:hidden;}
-
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-size:14px;line-height:1.65;overflow-x:hidden;}
     /* NAV */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0.8rem 3.5rem;background:rgba(240,244,255,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
     .nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.2rem;color:var(--navy);text-decoration:none;}
     .nav-right{display:flex;align-items:center;gap:1rem;}
-    .nav-contact-btn{background:var(--violet);color:#fff;padding:0.4rem 1.1rem;font-size:0.7rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:background 0.2s;}
+    .nav-contact-btn{background:var(--violet);color:#fff;padding:0.4rem 1.1rem;font-size:0.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border-radius:6px;transition:background .2s;}
     .nav-contact-btn:hover{background:var(--navy);}
-    .hamburger{width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:7px;transition:border-color 0.2s;position:relative;z-index:300;}
+    .hamburger{width:36px;height:36px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;cursor:pointer;background:var(--surface);border:1.5px solid var(--border);border-radius:8px;padding:7px;transition:border-color .2s;position:relative;z-index:300;}
     .hamburger:hover{border-color:var(--violet);}
-    .hamburger span{display:block;width:16px;height:1.5px;background:var(--navy);transition:all 0.3s ease;transform-origin:center;}
+    .hamburger span{display:block;width:16px;height:1.5px;background:var(--navy);transition:all .3s ease;transform-origin:center;}
     .hamburger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg);background:var(--violet);}
     .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
     .hamburger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);background:var(--violet);}
-
     /* MENU */
     .menu-overlay{position:fixed;inset:0;z-index:150;pointer-events:none;}
-    .menu-backdrop{position:absolute;inset:0;background:rgba(45,58,107,0);transition:background 0.4s;}
-    .menu-panel{position:fixed;top:0;right:0;width:290px;height:100%;background:var(--navy);transform:translateX(100%);transition:transform 0.4s cubic-bezier(0.77,0,0.18,1);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;z-index:151;}
+    .menu-backdrop{position:absolute;inset:0;background:rgba(45,58,107,0);transition:background .4s;}
+    .menu-panel{position:fixed;top:0;right:0;width:290px;height:100%;background:var(--navy);transform:translateX(100%);transition:transform .4s cubic-bezier(.77,0,.18,1);overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;z-index:151;}
     .menu-panel-inner{padding:5rem 2rem 2.5rem;display:flex;flex-direction:column;min-height:100%;}
     .menu-overlay.open{pointer-events:all;}
-    .menu-overlay.open .menu-backdrop{background:rgba(45,58,107,0.5);}
+    .menu-overlay.open .menu-backdrop{background:rgba(45,58,107,.5);}
     .menu-overlay.open .menu-panel{transform:translateX(0);}
-    .menu-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:1.2rem;}
+    .menu-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:1.2rem;}
     .menu-nav{list-style:none;}
-    .menu-nav li{border-bottom:1px solid rgba(255,255,255,0.08);}
-    .menu-nav a{display:flex;justify-content:space-between;align-items:center;padding:0.85rem 0;text-decoration:none;color:rgba(255,255,255,0.82);font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;transition:color 0.2s;}
+    .menu-nav li{border-bottom:1px solid rgba(255,255,255,.08);}
+    .menu-nav a{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;text-decoration:none;color:rgba(255,255,255,.82);font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;transition:color .2s;}
     .menu-nav a:hover{color:var(--teal);}
-    .menu-nav a::after{content:'↗';font-size:0.8rem;opacity:0;transform:translateX(-6px);transition:all 0.2s;font-family:'DM Sans',sans-serif;}
+    .menu-nav a::after{content:'&#8599;';font-size:.8rem;opacity:0;transform:translateX(-6px);transition:all .2s;font-family:'DM Sans',sans-serif;}
     .menu-nav a:hover::after{opacity:1;transform:translateX(0);}
-    .menu-contact-btn{display:block;background:var(--rose);color:#fff;text-align:center;padding:0.75rem 1.5rem;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;border-radius:8px;margin-top:1.4rem;transition:background 0.2s;}
+    .menu-contact-btn{display:block;background:var(--rose);color:#fff;text-align:center;padding:.75rem 1.5rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:8px;margin-top:1.4rem;transition:background .2s;}
     .menu-contact-btn:hover{background:var(--violet);}
-    .menu-footer{margin-top:1rem;font-size:0.65rem;color:rgba(255,255,255,0.22);line-height:1.8;}
-
+    .menu-footer{margin-top:1rem;font-size:.65rem;color:rgba(255,255,255,.22);line-height:1.8;}
     /* HERO */
     #home{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:65px;}
     .hero-left{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 4rem 4.5rem;}
-    .hero-tag{font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem;}
+    .hero-tag{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem;}
     .hero-tag::before{content:'';display:block;width:1.8rem;height:2px;background:var(--violet);border-radius:2px;}
-    .hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;line-height:1.0;letter-spacing:-0.03em;color:var(--navy);margin-bottom:0.3rem;}
+    .hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.03em;color:var(--navy);margin-bottom:.3rem;}
     .hero-name span{color:var(--violet);}
-    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(0.85rem,1.5vw,1.1rem);font-weight:400;font-style:italic;color:var(--muted);margin-bottom:1.5rem;}
-    .hero-bio{font-size:0.85rem;color:var(--subtext);max-width:440px;line-height:1.8;margin-bottom:1.8rem;}
+    .hero-title{font-family:'Playfair Display',serif;font-size:clamp(.85rem,1.5vw,1.1rem);font-weight:400;font-style:italic;color:var(--muted);margin-bottom:1.5rem;}
+    .hero-bio{font-size:.85rem;color:var(--subtext);max-width:440px;line-height:1.8;margin-bottom:1.8rem;}
     .hero-stats{display:flex;gap:2rem;}
     .stat-num{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--violet);line-height:1;}
-    .stat-label{font-size:0.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.15rem;}
-    .hero-right{background:linear-gradient(145deg,#e8edff 0%,#f3e8ff 50%,#e8f7ff 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem;position:relative;overflow:hidden;}
-    .hero-right::before{content:'AA';position:absolute;font-family:'Playfair Display',serif;font-size:17rem;font-weight:900;color:rgba(107,94,168,0.06);right:-2rem;bottom:-1.5rem;line-height:1;pointer-events:none;}
-    .contact-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.6rem;width:100%;max-width:310px;margin-bottom:1.1rem;box-shadow:0 8px 28px rgba(107,94,168,0.09);}
-    .contact-box h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:0.95rem;margin-bottom:0.9rem;}
-    .contact-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.7rem;color:var(--subtext);font-size:0.78rem;}
-    .contact-icon{width:28px;height:28px;background:var(--bg);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:0.75rem;flex-shrink:0;}
+    .stat-label{font-size:.63rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.15rem;}
+    .hero-right{background:linear-gradient(145deg,#e8edff,#f3e8ff 50%,#e8f7ff);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem;position:relative;overflow:hidden;}
+    .hero-right::before{content:'AA';position:absolute;font-family:'Playfair Display',serif;font-size:17rem;font-weight:900;color:rgba(107,94,168,.06);right:-2rem;bottom:-1.5rem;line-height:1;pointer-events:none;}
+    .contact-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.6rem;width:100%;max-width:310px;margin-bottom:1.1rem;box-shadow:0 8px 28px rgba(107,94,168,.09);}
+    .contact-box h3{font-family:'Playfair Display',serif;color:var(--navy);font-size:.95rem;margin-bottom:.9rem;}
+    .contact-row{display:flex;align-items:center;gap:.75rem;margin-bottom:.7rem;color:var(--subtext);font-size:.78rem;}
+    .contact-icon{width:28px;height:28px;background:var(--bg);border:1px solid var(--border);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;}
     .edu-box{background:var(--violet);border-radius:12px;padding:1rem 1.6rem;width:100%;max-width:310px;}
-    .edu-box p{color:rgba(255,255,255,0.7);font-size:0.63rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.15rem;}
-    .edu-box strong{color:#fff;font-size:0.9rem;font-family:'Playfair Display',serif;}
-
+    .edu-box p{color:rgba(255,255,255,.7);font-size:.63rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.15rem;}
+    .edu-box strong{color:#fff;font-size:.9rem;font-family:'Playfair Display',serif;}
     /* SHARED */
     section{padding:4rem 4.5rem;}
-    .section-label{font-size:0.64rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:0.5rem;display:flex;align-items:center;gap:0.65rem;}
+    .section-label{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--violet);font-weight:600;margin-bottom:.5rem;display:flex;align-items:center;gap:.65rem;}
     .section-label::before{content:'';display:block;width:1.8rem;height:2px;background:var(--violet);border-radius:2px;}
-    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:2.2rem;letter-spacing:-0.02em;}
-
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.3rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:2.2rem;letter-spacing:-.02em;}
     /* SKILLS */
-    #skills{background:linear-gradient(135deg,#e8edff 0%,#f3e8ff 100%);}
+    #skills{background:linear-gradient(135deg,#e8edff,#f3e8ff);}
     .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-    .skill-tile{background:var(--surface);border-radius:14px;padding:1.4rem 1.2rem 1.1rem;border:1px solid var(--border);box-shadow:0 2px 10px rgba(107,94,168,0.05);transition:transform 0.22s,box-shadow 0.22s;display:flex;flex-direction:column;align-items:flex-start;gap:0.65rem;}
-    .skill-tile:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(107,94,168,0.12);}
+    .skill-tile{background:var(--surface);border-radius:14px;padding:1.4rem 1.2rem 1.1rem;border:1px solid var(--border);box-shadow:0 2px 10px rgba(107,94,168,.05);transition:transform .22s,box-shadow .22s;display:flex;flex-direction:column;align-items:flex-start;gap:.65rem;}
+    .skill-tile:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(107,94,168,.12);}
     .skill-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-    .skill-name{font-weight:600;font-size:0.82rem;color:var(--navy);line-height:1.3;}
+    .skill-name{font-weight:600;font-size:.82rem;color:var(--navy);line-height:1.3;}
     .skill-tile:nth-child(1) .skill-icon{background:#e8edff;}
     .skill-tile:nth-child(2) .skill-icon{background:#e0f7f7;}
     .skill-tile:nth-child(3) .skill-icon{background:#fde8f2;}
     .skill-tile:nth-child(4) .skill-icon{background:#fff0e0;}
     .skill-tile:nth-child(5) .skill-icon{background:#e8f5e0;}
     .skill-tile:nth-child(6) .skill-icon{background:#ede8ff;}
-
-    /* TIMELINE HORIZONTAL */
+    /* TIMELINE — HORIZONTAL */
     #timeline{background:var(--surface);}
-    .tl-horizontal{position:relative;display:flex;overflow-x:auto;padding-bottom:1.5rem;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
-    .tl-horizontal::-webkit-scrollbar{height:4px;}
-    .tl-horizontal::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
-    .tl-horizontal::before{content:'';position:absolute;top:7px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--teal));z-index:0;}
-    .tl-h-item{flex:0 0 230px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;text-align:center;padding:0 16px;}
-    .tl-h-dot{width:16px;height:16px;border-radius:50%;border:3px solid var(--surface);flex-shrink:0;margin-bottom:14px;}
+    /* outer wrapper adds side padding so line spans full section width */
+    .tl-scroll-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--border) transparent;padding-bottom:1.2rem;}
+    .tl-scroll-wrap::-webkit-scrollbar{height:4px;}
+    .tl-scroll-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+    /* inner row: line sits behind everything */
+    .tl-horizontal{position:relative;display:inline-flex;min-width:100%;}
+    /* the continuous line — 50% from top of the dot container row */
+    .tl-horizontal::before{content:'';position:absolute;top:8px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--violet),var(--teal));z-index:0;}
+    .tl-h-item{flex:0 0 200px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 14px;position:relative;z-index:1;}
+    .tl-h-dot{width:16px;height:16px;border-radius:50%;border:3px solid var(--surface);flex-shrink:0;margin-bottom:10px;position:relative;z-index:2;}
     .tl-h-item:nth-child(1) .tl-h-dot{background:#2f80c8;box-shadow:0 0 0 2px #2f80c8;}
     .tl-h-item:nth-child(2) .tl-h-dot{background:#e07b2a;box-shadow:0 0 0 2px #e07b2a;}
     .tl-h-item:nth-child(3) .tl-h-dot{background:#2faa6e;box-shadow:0 0 0 2px #2faa6e;}
     .tl-h-item:nth-child(4) .tl-h-dot{background:#d93f87;box-shadow:0 0 0 2px #d93f87;}
-    .tl-h-dates{font-size:0.63rem;font-weight:600;color:var(--muted);margin-bottom:5px;white-space:nowrap;}
-    .tl-h-company{font-family:'Playfair Display',serif;font-size:0.92rem;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.2;}
-    .tl-h-role{font-size:0.7rem;color:var(--violet);font-weight:500;line-height:1.3;margin-bottom:4px;}
-    .tl-h-sector{display:inline-block;font-size:0.6rem;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--bg);color:var(--muted);white-space:nowrap;}
-
+    .tl-h-logo{width:38px;height:38px;border-radius:10px;object-fit:contain;background:var(--bg);border:1px solid var(--border);padding:5px;margin-bottom:8px;}
+    .tl-h-dates{font-size:.6rem;font-weight:600;color:var(--muted);margin-bottom:4px;white-space:nowrap;}
+    .tl-h-company{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:3px;line-height:1.2;}
+    .tl-h-role{font-size:.68rem;color:var(--violet);font-weight:500;line-height:1.3;margin-bottom:5px;}
+    .tl-h-sector{display:inline-block;font-size:.58rem;font-weight:600;padding:2px 8px;border-radius:20px;background:var(--bg);color:var(--muted);white-space:nowrap;}
     /* PROJECTS */
     #experience{background:var(--bg);}
-    .flip-hint-global{font-size:0.74rem;color:var(--muted);font-style:italic;margin-bottom:1.6rem;display:flex;align-items:center;gap:0.4rem;}
-    .flip-hint-global::before{content:'↕';color:var(--violet);font-style:normal;}
-    .pc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start;}
-    .pc-card{border-radius:14px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;position:relative;aspect-ratio:1/1;overflow:hidden;transition:box-shadow 0.22s,transform 0.18s;}
-    .pc-card:hover{box-shadow:0 6px 22px rgba(107,94,168,0.2);transform:translateY(-2px);}
-    .pc-card:active{transform:scale(0.97);}
-    .pc-face{position:absolute;inset:0;display:flex;flex-direction:column;padding:13px;transition:opacity 0.25s;}
-    .pc-detail{position:absolute;inset:0;display:flex;flex-direction:column;padding:13px;background:var(--navy);transform:translateY(100%);transition:transform 0.38s cubic-bezier(0.4,0,0.2,1);color:#fff;overflow-y:auto;}
+    .flip-hint-global{font-size:.74rem;color:var(--muted);font-style:italic;margin-bottom:1.6rem;display:flex;align-items:center;gap:.4rem;}
+    .flip-hint-global::before{content:'&#8597;';color:var(--violet);font-style:normal;}
+    .pc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+    /* uniform square cards */
+    .pc-card{border-radius:14px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;position:relative;aspect-ratio:1/1;overflow:hidden;transition:box-shadow .22s,transform .18s;}
+    .pc-card:hover{box-shadow:0 6px 22px rgba(107,94,168,.2);transform:translateY(-2px);}
+    .pc-card:active{transform:scale(.97);}
+    /* FRONT FACE — full height flex column */
+    .pc-face{position:absolute;inset:0;display:flex;flex-direction:column;padding:13px;transition:opacity .25s;}
+    /* DETAIL OVERLAY — slides up */
+    .pc-detail{position:absolute;inset:0;display:flex;flex-direction:column;padding:13px;background:var(--navy);transform:translateY(100%);transition:transform .38s cubic-bezier(.4,0,.2,1);color:#fff;overflow-y:auto;}
     .pc-card.open .pc-detail{transform:translateY(0);}
-    .pc-card.open .pc-face{opacity:0.2;pointer-events:none;}
-    .pf-logo-row{display:flex;align-items:center;gap:7px;margin-bottom:6px;}
-    .pf-logo{width:24px;height:24px;border-radius:6px;object-fit:contain;background:rgba(255,255,255,0.75);padding:2px;flex-shrink:0;border:1px solid rgba(255,255,255,0.4);}
-    .pf-company-name{font-size:0.7rem;font-weight:700;color:inherit;line-height:1.2;}
-    .pf-role-line{font-size:0.58rem;font-weight:600;color:inherit;opacity:0.65;margin-bottom:7px;padding-bottom:6px;border-bottom:1px solid rgba(0,0,0,0.12);}
-    .card-navy .pf-role-line{border-bottom-color:rgba(255,255,255,0.18);}
-    .pf-summary{font-size:0.74rem;font-weight:600;color:inherit;line-height:1.4;flex:1;}
-    .pf-duration{margin-top:7px;font-size:0.58rem;font-weight:500;opacity:0.5;color:inherit;}
-    .pf-expand-cue{margin-top:4px;font-size:0.54rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;opacity:0.38;text-align:right;}
-    .pf-expand-cue::after{content:' ▾';}
-    .pc-card.open .pf-expand-cue::after{content:' ▴';}
-    .pd-close-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;}
-    .pd-company{font-size:0.6rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;}
-    .pd-close-hint{font-size:0.56rem;color:rgba(255,255,255,0.3);letter-spacing:0.05em;text-transform:uppercase;}
-    .pd-title{font-weight:700;font-size:0.78rem;color:#fff;margin-bottom:7px;line-height:1.3;}
-    .pd-brief{font-size:0.68rem;color:rgba(255,255,255,0.82);line-height:1.5;margin-bottom:9px;flex:1;}
-    .pd-impacts-label{font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:4px;}
-    .pd-impacts{list-style:none;}
-    .pd-impacts li{font-size:0.68rem;color:rgba(255,255,255,0.88);line-height:1.4;padding-left:12px;position:relative;margin-bottom:3px;}
-    .pd-impacts li::before{content:'↑';position:absolute;left:0;color:var(--teal);font-weight:700;font-size:0.62rem;}
+    .pc-card.open .pc-face{opacity:.18;pointer-events:none;}
+    /* face elements */
+    .pf-logo-row{display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-shrink:0;}
+    .pf-logo{width:24px;height:24px;border-radius:6px;object-fit:contain;background:rgba(255,255,255,.75);padding:2px;flex-shrink:0;border:1px solid rgba(255,255,255,.4);}
+    .pf-company-name{font-size:.7rem;font-weight:700;color:inherit;line-height:1.2;}
+    .pf-divider{height:1px;background:rgba(0,0,0,.12);margin-bottom:8px;flex-shrink:0;}
+    .card-navy .pf-divider{background:rgba(255,255,255,.18);}
+    /* summary fills available space */
+    .pf-summary{font-size:.74rem;font-weight:600;color:inherit;line-height:1.4;flex:1;min-height:0;}
+    /* bottom row ALWAYS pinned — duration left, cue right */
+    .pf-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:8px;flex-shrink:0;}
+    .pf-duration{font-size:.58rem;font-weight:500;opacity:.52;color:inherit;}
+    .pf-cue{font-size:.54rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:.4;color:inherit;}
+    .pf-cue::after{content:'Details &#9698;';}
+    .pc-card.open .pf-cue::after{content:'Close &#9652;';}
+    /* detail overlay elements */
+    .pd-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-shrink:0;}
+    .pd-company{font-size:.6rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;}
+    .pd-close{font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.05em;}
+    .pd-title{font-weight:700;font-size:.78rem;color:#fff;margin-bottom:7px;line-height:1.3;flex-shrink:0;}
+    .pd-brief{font-size:.68rem;color:rgba(255,255,255,.82);line-height:1.5;margin-bottom:8px;flex:1;}
+    .pd-imp-label{font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:4px;flex-shrink:0;}
+    .pd-impacts{list-style:none;flex-shrink:0;}
+    .pd-impacts li{font-size:.67rem;color:rgba(255,255,255,.88);line-height:1.4;padding-left:12px;position:relative;margin-bottom:3px;}
+    .pd-impacts li::before{content:'&#8593;';position:absolute;left:0;color:var(--teal);font-weight:700;font-size:.62rem;}
+    /* card colours */
     .card-navy{background:#1e2d5e;color:#fff;}
-    .card-yellow{background:#f9d94e;color:#2c2200;}
     .card-sky{background:#d6eaf8;color:#1a3a5e;}
     .card-mint{background:#d4f4e5;color:#0a3a24;}
-    .card-rose{background:#fde8f2;color:#5e0a2e;}
     .card-peach{background:#fce8d3;color:#3e1a00;}
+    .card-yellow{background:#f9d94e;color:#2c2200;}
     .card-lavender{background:#ede8ff;color:#2d1a6b;}
     .card-teal{background:#d4f4f4;color:#0a3030;}
     .card-sage{background:#e8f5e0;color:#1a3a0a;}
     .card-coral{background:#ffd6d6;color:#5e0a0a;}
-
+    .card-rose{background:#fde8f2;color:#5e0a2e;}
     /* ACHIEVEMENTS */
-    #achievements{background:linear-gradient(135deg,#f3e8ff 0%,#e8f7ff 100%);}
+    #achievements{background:linear-gradient(135deg,#f3e8ff,#e8f7ff);}
     .ach-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;}
-    .ach-col h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.9rem;padding-bottom:0.5rem;border-bottom:2px solid var(--violet);}
-    .ach-item{display:flex;gap:0.75rem;align-items:flex-start;margin-bottom:0.7rem;padding:0.75rem 0.85rem;background:var(--surface);border-radius:10px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(107,94,168,0.05);}
-    .ach-bullet{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--teal));color:#fff;font-size:0.62rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .ach-text{font-size:0.78rem;color:var(--text);line-height:1.5;}
+    .ach-col h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.9rem;padding-bottom:.5rem;border-bottom:2px solid var(--violet);}
+    .ach-item{display:flex;gap:.75rem;align-items:flex-start;margin-bottom:.7rem;padding:.75rem .85rem;background:var(--surface);border-radius:10px;border:1px solid var(--border);box-shadow:0 2px 8px rgba(107,94,168,.05);}
+    .ach-bullet{width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--teal));color:#fff;font-size:.62rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .ach-text{font-size:.78rem;color:var(--text);line-height:1.5;}
     .ach-text strong{color:var(--violet);font-weight:600;}
-
     /* FOOTER */
-    footer{background:var(--navy);color:rgba(255,255,255,0.5);text-align:center;padding:2rem;font-size:0.75rem;}
+    footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:2rem;font-size:.75rem;}
     footer a{color:var(--teal);text-decoration:none;}
-
     /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
-    .hero-left>*{opacity:0;animation:fadeUp 0.6s forwards;}
-    .hero-left>*:nth-child(1){animation-delay:0.1s;}
-    .hero-left>*:nth-child(2){animation-delay:0.2s;}
-    .hero-left>*:nth-child(3){animation-delay:0.3s;}
-    .hero-left>*:nth-child(4){animation-delay:0.4s;}
-    .hero-left>*:nth-child(5){animation-delay:0.5s;}
-
+    .hero-left>*{opacity:0;animation:fadeUp .6s forwards;}
+    .hero-left>*:nth-child(1){animation-delay:.1s;}
+    .hero-left>*:nth-child(2){animation-delay:.2s;}
+    .hero-left>*:nth-child(3){animation-delay:.3s;}
+    .hero-left>*:nth-child(4){animation-delay:.4s;}
+    .hero-left>*:nth-child(5){animation-delay:.5s;}
     /* RESPONSIVE */
     @media(max-width:960px){
-      nav{padding:0.75rem 1.3rem;}
+      nav{padding:.75rem 1.3rem;}
       .nav-contact-btn{display:none;}
       #home{grid-template-columns:1fr;}
       .hero-right{display:none;}
@@ -183,12 +182,11 @@
       .pc-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
     }
     @media(max-width:600px){
-      section{padding:2.2rem 0.75rem;}
-      .skills-grid{grid-template-columns:repeat(2,1fr);gap:0.65rem;}
-      .skill-tile{padding:1rem 0.9rem;}
-      .skill-icon{width:34px;height:34px;font-size:1rem;}
+      section{padding:2.2rem .75rem;}
+      .skills-grid{grid-template-columns:repeat(2,1fr);gap:.65rem;}
       .hero-stats{flex-wrap:wrap;gap:1.2rem;}
       .pc-grid{grid-template-columns:repeat(2,1fr);gap:8px;}
+      .pc-face,.pc-detail{padding:10px;}
     }
   </style>
 </head>
@@ -199,16 +197,14 @@
   <a class="nav-logo" href="#home">AA.</a>
   <div class="nav-right">
     <a href="mailto:arpitagrawal1102@gmail.com" class="nav-contact-btn">Get in Touch</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- MENU -->
 <div class="menu-overlay" id="menuOverlay">
   <div class="menu-backdrop" id="menuBackdrop"></div>
-  <div class="menu-panel" id="menuPanel">
+  <div class="menu-panel">
     <div class="menu-panel-inner">
       <p class="menu-label">Navigate</p>
       <ul class="menu-nav">
@@ -218,7 +214,7 @@
         <li><a href="#experience" class="menu-link">Projects</a></li>
         <li><a href="#achievements" class="menu-link">Achievements</a></li>
       </ul>
-      <a href="mailto:arpitagrawal1102@gmail.com" class="menu-contact-btn">✉ Get in Touch</a>
+      <a href="mailto:arpitagrawal1102@gmail.com" class="menu-contact-btn">&#9993; Get in Touch</a>
       <p class="menu-footer">arpitagrawal1102@gmail.com<br/>+91-9927081879</p>
     </div>
   </div>
@@ -229,8 +225,8 @@
   <div class="hero-left">
     <div class="hero-tag">Growth &amp; Operations Transformation</div>
     <h1 class="hero-name">Arpit<br/><span>Agrawal</span></h1>
-    <p class="hero-title">Consultant · Strategist · Problem Solver</p>
-    <p class="hero-bio">Seasoned consultant with 8+ years driving growth, operational excellence and product innovation through digital transformation and AI. Specialist in Financial Services — Broking &amp; Insurance.</p>
+    <p class="hero-title">Consultant &middot; Strategist &middot; Problem Solver</p>
+    <p class="hero-bio">Seasoned consultant with 8+ years driving growth, operational excellence and product innovation through digital transformation and AI. Specialist in Financial Services &mdash; Broking &amp; Insurance.</p>
     <div class="hero-stats">
       <div><div class="stat-num">8+</div><div class="stat-label">Years Exp.</div></div>
       <div><div class="stat-num">4</div><div class="stat-label">Companies</div></div>
@@ -240,14 +236,14 @@
   <div class="hero-right">
     <div class="contact-box">
       <h3>Contact Details</h3>
-      <div class="contact-row"><div class="contact-icon">✉</div><span>arpitagrawal1102@gmail.com</span></div>
-      <div class="contact-row"><div class="contact-icon">📞</div><span>+91-9927081879</span></div>
-      <div class="contact-row"><div class="contact-icon">📍</div><span>India</span></div>
+      <div class="contact-row"><div class="contact-icon">&#9993;</div><span>arpitagrawal1102@gmail.com</span></div>
+      <div class="contact-row"><div class="contact-icon">&#128222;</div><span>+91-9927081879</span></div>
+      <div class="contact-row"><div class="contact-icon">&#128205;</div><span>India</span></div>
     </div>
     <div class="edu-box">
       <p>Education</p>
-      <strong>B.Tech — IIT Roorkee</strong><br/>
-      <span style="color:rgba(255,255,255,0.65);font-size:0.75rem;">Batch of 2017</span>
+      <strong>B.Tech &mdash; IIT Roorkee</strong><br/>
+      <span style="color:rgba(255,255,255,.65);font-size:.75rem;">Batch of 2017</span>
     </div>
   </div>
 </section>
@@ -257,228 +253,216 @@
   <div class="section-label">Core Competencies</div>
   <h2 class="section-title">What I Bring to the Table</h2>
   <div class="skills-grid">
-    <div class="skill-tile"><div class="skill-icon">🔍</div><div class="skill-name">Business Analysis &amp; Strategy</div></div>
-    <div class="skill-tile"><div class="skill-icon">🤖</div><div class="skill-name">Digital &amp; AI Transformation</div></div>
-    <div class="skill-tile"><div class="skill-icon">📈</div><div class="skill-name">Growth Strategy &amp; Innovation</div></div>
-    <div class="skill-tile"><div class="skill-icon">🏗️</div><div class="skill-name">Operating Model Design</div></div>
-    <div class="skill-tile"><div class="skill-icon">🎨</div><div class="skill-name">Journey &amp; Product Design</div></div>
-    <div class="skill-tile"><div class="skill-icon">💰</div><div class="skill-name">Cost Optimisation &amp; Change Mgmt</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#128269;</div><div class="skill-name">Business Analysis &amp; Strategy</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#129302;</div><div class="skill-name">Digital &amp; AI Transformation</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#128200;</div><div class="skill-name">Growth Strategy &amp; Innovation</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#127959;</div><div class="skill-name">Operating Model Design</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#127912;</div><div class="skill-name">Journey &amp; Product Design</div></div>
+    <div class="skill-tile"><div class="skill-icon">&#128176;</div><div class="skill-name">Cost Optimisation &amp; Change Mgmt</div></div>
   </div>
 </section>
-
 <!-- TIMELINE -->
 <section id="timeline">
   <div class="section-label">Career Path</div>
   <h2 class="section-title">My Journey So Far</h2>
-  <div class="tl-horizontal">
-    <div class="tl-h-item">
-      <div class="tl-h-dot"></div>
-      <div class="tl-h-dates">Feb 2022 – Present</div>
-      <div class="tl-h-company">KPMG India</div>
-      <div class="tl-h-role">Manager, Business Consulting</div>
-      <span class="tl-h-sector">Insurance · Banking · Auto-Finance</span>
-    </div>
-    <div class="tl-h-item">
-      <div class="tl-h-dot"></div>
-      <div class="tl-h-dates">Jul 2021 – Feb 2022</div>
-      <div class="tl-h-company">Kotak Securities</div>
-      <div class="tl-h-role">Associate Vice President</div>
-      <span class="tl-h-sector">Products &amp; Special Projects</span>
-    </div>
-    <div class="tl-h-item">
-      <div class="tl-h-dot"></div>
-      <div class="tl-h-dates">Apr 2019 – Jul 2021</div>
-      <div class="tl-h-company">Angel One</div>
-      <div class="tl-h-role">Senior Manager</div>
-      <span class="tl-h-sector">Digital Strategy &amp; Growth</span>
-    </div>
-    <div class="tl-h-item">
-      <div class="tl-h-dot"></div>
-      <div class="tl-h-dates">Jul 2017 – Apr 2019</div>
-      <div class="tl-h-company">PwC India</div>
-      <div class="tl-h-role">Associate Consultant</div>
-      <span class="tl-h-sector">Digital Transformation · FS</span>
+  <div class="tl-scroll-wrap">
+    <div class="tl-horizontal">
+
+      <div class="tl-h-item">
+        <div class="tl-h-dot"></div>
+        <img class="tl-h-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/120px-KPMG_logo.svg.png" alt="KPMG" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+        <div class="tl-h-dates">Feb 2022 &ndash; Present</div>
+        <div class="tl-h-company">KPMG India</div>
+        <div class="tl-h-role">Manager, Business Consulting</div>
+        <span class="tl-h-sector">Insurance &middot; Banking &middot; Auto-Finance</span>
+      </div>
+
+      <div class="tl-h-item">
+        <div class="tl-h-dot"></div>
+        <img class="tl-h-logo" src="https://www.anthropic.com/favicon.ico" alt="Kotak" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+        <div class="tl-h-dates">Jul 2021 &ndash; Feb 2022</div>
+        <div class="tl-h-company">Kotak Securities</div>
+        <div class="tl-h-role">Associate Vice President</div>
+        <span class="tl-h-sector">Products &amp; Special Projects</span>
+      </div>
+
+      <div class="tl-h-item">
+        <div class="tl-h-dot"></div>
+        <img class="tl-h-logo" src="https://www.anthropic.com/favicon.ico" alt="Angel One" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+        <div class="tl-h-dates">Apr 2019 &ndash; Jul 2021</div>
+        <div class="tl-h-company">Angel One</div>
+        <div class="tl-h-role">Senior Manager</div>
+        <span class="tl-h-sector">Digital Strategy &amp; Growth</span>
+      </div>
+
+      <div class="tl-h-item">
+        <div class="tl-h-dot"></div>
+        <img class="tl-h-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/120px-PricewaterhouseCoopers_Logo.svg.png" alt="PwC" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+        <div class="tl-h-dates">Jul 2017 &ndash; Apr 2019</div>
+        <div class="tl-h-company">PwC India</div>
+        <div class="tl-h-role">Associate Consultant</div>
+        <span class="tl-h-sector">Digital Transformation &middot; FS</span>
+      </div>
+
     </div>
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section id="experience">
   <div class="section-label">Project Portfolio</div>
   <h2 class="section-title">Key Projects</h2>
   <p class="flip-hint-global">Tap any card to see details &amp; impact</p>
   <div class="pc-grid" id="pcGrid">
-
     <div class="pc-card card-navy">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
-        <div class="pf-role-line">Insurance</div>
-        <div class="pf-summary">Distribution channel merger — InsuranceDekho &amp; RenewBuy</div>
-        <div class="pf-duration">⏱ 3 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Distribution channel merger &mdash; InsuranceDekho &amp; RenewBuy</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">KPMG · Insurance</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">KPMG &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Distribution Channel Merger</div>
         <div class="pd-brief">Designed B2C &amp; B2B merger strategy and unified operating model to unlock synergy across InsuranceDekho &amp; RenewBuy.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>₹32 Cr savings from distribution synergy</li><li>Capacity for up to 5X business growth</li></ul>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>&#8377;32 Cr savings from distribution synergy</li><li>Capacity for up to 5X business growth</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-sky">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
-        <div class="pf-role-line">Insurance</div>
-        <div class="pf-summary">BPR blueprint &amp; cost optimisation — Ageas Federal Life Insurance</div>
-        <div class="pf-duration">⏱ 4 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">BPR blueprint &amp; cost optimisation &mdash; Ageas Federal Life Insurance</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 4 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">KPMG · Insurance</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">KPMG &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">BPR &amp; Cost Optimisation</div>
-        <div class="pd-brief">Benchmarked to industry leaders, designed future-state operating model and full transformation roadmap for Ageas Federal.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>Policy issuance TAT ↓ 40%</li><li>Claims TAT ↓ 70% · NPS ↑ 5 pts</li><li>₹50 Cr opex savings</li></ul>
+        <div class="pd-brief">Benchmarked to industry leaders, designed future-state operating model and full transformation roadmap.</div>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>Policy issuance TAT &#8595; 40%</li><li>Claims TAT &#8595; 70% &middot; NPS &#8593; 5 pts</li><li>&#8377;50 Cr opex savings</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-mint">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
-        <div class="pf-role-line">Banking</div>
-        <div class="pf-summary">5-year growth strategy — Utkarsh Small Finance Bank (Pre-IPO)</div>
-        <div class="pf-duration">⏱ 3 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">5-year growth strategy &mdash; Utkarsh Small Finance Bank (Pre-IPO)</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">KPMG · Banking</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">KPMG &middot; Banking</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">5-Year Growth Blueprint</div>
         <div class="pd-brief">Physical &amp; digital expansion, GTM sourcing, customer journey redesign across assets &amp; liability products for pre-IPO SFB.</div>
-        <div class="pd-impacts-label">Impact</div>
+        <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>Roadmap for 8X growth in 5 years</li><li>Sales productivity framework built</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-peach">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
-        <div class="pf-role-line">Auto-Loan</div>
-        <div class="pf-summary">E2E auto-loan disbursement journey — Toyota Financial Services India</div>
-        <div class="pf-duration">⏱ 15 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">E2E auto-loan disbursement journey &mdash; Toyota Financial Services India</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">KPMG · Auto-Loan</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">KPMG &middot; Auto-Loan</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Auto-Loan Disbursement Journey</div>
         <div class="pd-brief">Designed DIY &amp; assisted sales journey, wireframes, UI/UX; program managed PWA with 15+ vendor partners.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>Avg disbursement TAT ↓ 3 days</li><li>Sales exec productivity ↑ 2 files/day</li></ul>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>Avg disbursement TAT &#8595; 3 days</li><li>Sales exec productivity &#8593; 2 files/day</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-yellow">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Kotak Securities</span></div>
-        <div class="pf-role-line">Product</div>
+        <div class="pf-divider"></div>
         <div class="pf-summary">DIY DMAT account opening journey optimisation</div>
-        <div class="pf-duration">⏱ 6 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 6 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">Kotak · Product</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">Kotak &middot; Product</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">DMAT Journey Optimisation</div>
         <div class="pd-brief">Product backlog refinement, drop-off funnel optimisation, and lead management improvements managed end-to-end.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>DIY lead-to-conversion ↑ 5%</li><li>Funnel drop-offs significantly reduced</li></ul>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>DIY lead-to-conversion &#8593; 5%</li><li>Funnel drop-offs significantly reduced</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-lavender">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Kotak Securities</span></div>
-        <div class="pf-role-line">Growth</div>
-        <div class="pf-summary">Influencer marketing program — built from scratch as a new acquisition channel</div>
-        <div class="pf-duration">⏱ 3 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Influencer marketing program &mdash; built from scratch as a new acquisition channel</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">Kotak · Growth</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">Kotak &middot; Growth</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Influencer Marketing Program</div>
         <div class="pd-brief">Designed complete program: reward construct, journeys, target market, ops unit setup, reward processing, and first-year roadmap.</div>
-        <div class="pd-impacts-label">Impact</div>
+        <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>+10,000 new accounts via influencer channel</li><li>New growth arm launched from zero</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-teal">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
-        <div class="pf-role-line">Growth</div>
-        <div class="pf-summary">Referral program transformation — new customer acquisition engine</div>
-        <div class="pf-duration">⏱ 15 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Referral program transformation &mdash; new customer acquisition engine</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">Angel One · Growth</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">Angel One &middot; Growth</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Referral Program Transformation</div>
         <div class="pd-brief">Refined journeys &amp; dashboards; introduced DIY, automations, reward marketplace &amp; instant reward processing.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>Referral rate ↑ 8X</li><li>Sales contribution: 15% → 40%</li></ul>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>Referral rate &#8593; 8X</li><li>Sales contribution: 15% &#8594; 40%</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-sage">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
-        <div class="pf-role-line">Innovation</div>
-        <div class="pf-summary">Vernacular language integration — 8 Indian languages, first in industry</div>
-        <div class="pf-duration">⏱ 9 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Vernacular language integration &mdash; 8 Indian languages, first in industry</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 9 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">Angel One · Innovation</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">Angel One &middot; Innovation</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Vernacular Language Integration</div>
-        <div class="pd-brief">Introduced 8 Indian languages in core trading app &amp; web — driving inclusion in Tier 3/4 city markets.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>↑ DIY account opening % in Tier 3/4 cities</li><li>First-in-industry vernacular milestone</li></ul>
+        <div class="pd-brief">Introduced 8 Indian languages in core trading app &amp; web &mdash; driving inclusion in Tier 3/4 city markets.</div>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>&#8593; DIY account opening % in Tier 3/4 cities</li><li>First-in-industry vernacular milestone</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-coral">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
-        <div class="pf-role-line">Cross-sell</div>
-        <div class="pf-summary">Digital transformation — MF &amp; insurance cross-sell platform</div>
-        <div class="pf-duration">⏱ 12 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Digital transformation &mdash; MF &amp; insurance cross-sell platform</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 12 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">Angel One · Cross-sell</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">Angel One &middot; Cross-sell</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">MF &amp; Insurance Cross-sell</div>
         <div class="pd-brief">DIY &amp; assisted sales journeys for Life &amp; Health insurance; MF sub-broker registration and activation platform built.</div>
-        <div class="pd-impacts-label">Impact</div>
-        <ul class="pd-impacts"><li>Insurance cross-sell ↑ 10%</li><li>MF onboarding TAT reduced</li></ul>
+        <div class="pd-imp-label">Impact</div>
+        <ul class="pd-impacts"><li>Insurance cross-sell &#8593; 10%</li><li>MF onboarding TAT reduced</li></ul>
       </div>
     </div>
-
     <div class="pc-card card-rose">
       <div class="pc-face">
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">PwC India</span></div>
-        <div class="pf-role-line">Insurance</div>
-        <div class="pf-summary">Real-time paperless health insurance issuance — Reliance Health Insurance</div>
-        <div class="pf-duration">⏱ 15 months</div>
-        <div class="pf-expand-cue">Details</div>
+        <div class="pf-divider"></div>
+        <div class="pf-summary">Real-time paperless health insurance issuance &mdash; Reliance Health Insurance</div>
+        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-close-row"><span class="pd-company">PwC · Insurance</span><span class="pd-close-hint">Tap to close ↩</span></div>
+        <div class="pd-header"><span class="pd-company">PwC &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Paperless Policy Issuance</div>
         <div class="pd-brief">Designed full customer &amp; assisted sales journey; wireframes, UI/UX, business rules; program managed with 20+ vendor partners.</div>
-        <div class="pd-impacts-label">Impact</div>
+        <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>First-in-industry real-time paperless issuance</li><li>20+ vendor integrations end-to-end</li></ul>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -489,73 +473,71 @@
   <div class="ach-grid">
     <div class="ach-col">
       <h3>Professional</h3>
-      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Above &amp; Beyond Award for Strategy Blueprint project (Mar 2023)</div></div>
-      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Impact Award by Partner for Strategy Blueprint project (Nov 2022)</div></div>
-      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Kudos Award for Implementation project at NSDL (Aug 2022)</div></div>
-      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>Angel One</strong> — Employee of the Year, CEO Award (Mar 2021)</div></div>
-      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>PwC India</strong> — R&amp;R Award for large-scale implementation project (2018)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Above &amp; Beyond Award for Strategy Blueprint project (Mar 2023)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Impact Award by Partner for Strategy Blueprint project (Nov 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Kudos Award for Implementation project at NSDL (Aug 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>Angel One</strong> &mdash; Employee of the Year, CEO Award (Mar 2021)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>PwC India</strong> &mdash; R&amp;R Award for large-scale implementation project (2018)</div></div>
     </div>
     <div class="ach-col">
       <h3>Pre-Professional</h3>
-      <div class="ach-item"><div class="ach-bullet">🎓</div><div class="ach-text"><strong>IIT Roorkee</strong> — Head of Events, Thomso Annual Cultural Festival (2015)</div></div>
-      <div class="ach-item"><div class="ach-bullet">🏸</div><div class="ach-text">Winner — Intra-department Badminton Competition (2015, 2016)</div></div>
-      <div class="ach-item"><div class="ach-bullet">🏆</div><div class="ach-text">Innovative Design Award — RC Car Racing, Cognizant, IIT Roorkee (2014)</div></div>
-      <div class="ach-item"><div class="ach-bullet">🎯</div><div class="ach-text">IIT JEE — All India Rank 4523 (General Category)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#127891;</div><div class="ach-text"><strong>IIT Roorkee</strong> &mdash; Head of Events, Thomso Annual Cultural Festival (2015)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#127952;</div><div class="ach-text">Winner &mdash; Intra-department Badminton Competition (2015, 2016)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#127942;</div><div class="ach-text">Innovative Design Award &mdash; RC Car Racing, Cognizant, IIT Roorkee (2014)</div></div>
+      <div class="ach-item"><div class="ach-bullet">&#127919;</div><div class="ach-text">IIT JEE &mdash; All India Rank 4523 (General Category)</div></div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:0.3rem;">Arpit Agrawal</p>
-  <p>Growth &amp; Operations Transformation Specialist · IIT Roorkee '17</p>
-  <p style="margin-top:0.5rem;"><a href="mailto:arpitagrawal1102@gmail.com">arpitagrawal1102@gmail.com</a> &nbsp;·&nbsp; +91-9927081879</p>
+  <p style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.3rem;">Arpit Agrawal</p>
+  <p>Growth &amp; Operations Transformation Specialist &middot; IIT Roorkee &rsquo;17</p>
+  <p style="margin-top:.5rem;"><a href="mailto:arpitagrawal1102@gmail.com">arpitagrawal1102@gmail.com</a> &nbsp;&middot;&nbsp; +91-9927081879</p>
 </footer>
 
 <script>
-  var hamburger = document.getElementById('hamburger');
+  var burger = document.getElementById('hamburger');
   var overlay = document.getElementById('menuOverlay');
   var backdrop = document.getElementById('menuBackdrop');
 
   function openMenu() {
-    hamburger.classList.add('open');
+    burger.classList.add('open');
     overlay.classList.add('open');
     document.documentElement.style.overflow = 'hidden';
   }
   function closeMenu() {
-    hamburger.classList.remove('open');
+    burger.classList.remove('open');
     overlay.classList.remove('open');
     document.documentElement.style.overflow = '';
   }
 
-  hamburger.addEventListener('click', function(e) {
+  burger.addEventListener('click', function(e) {
     e.stopPropagation();
-    if (overlay.classList.contains('open')) { closeMenu(); } else { openMenu(); }
+    overlay.classList.contains('open') ? closeMenu() : openMenu();
   });
   backdrop.addEventListener('click', closeMenu);
 
   document.querySelectorAll('.menu-link').forEach(function(link) {
     link.addEventListener('click', function(e) {
       var href = this.getAttribute('href');
-      if (href && href.charAt(0) === '#') {
+      if (href && href[0] === '#') {
         e.preventDefault();
         closeMenu();
         setTimeout(function() {
-          var target = document.querySelector(href);
-          if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-        }, 360);
-      } else {
-        closeMenu();
-      }
+          var t = document.querySelector(href);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 350);
+      } else { closeMenu(); }
     });
   });
 
   document.getElementById('pcGrid').addEventListener('click', function(e) {
     var card = e.target.closest('.pc-card');
-    if (!card) { return; }
-    var isOpen = card.classList.contains('open');
+    if (!card) return;
+    var wasOpen = card.classList.contains('open');
     document.querySelectorAll('.pc-card.open').forEach(function(c) { c.classList.remove('open'); });
-    if (!isOpen) { card.classList.add('open'); }
+    if (!wasOpen) card.classList.add('open');
   });
 </script>
 </body>
