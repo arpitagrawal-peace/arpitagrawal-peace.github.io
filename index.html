@@ -3,125 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arpit Agrawal | Portfolio</title>
+    <title>Arpit Agrawal | Growth & Transformation Specialist</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #030712; color: #f3f4f6; scroll-behavior: smooth; }
-        .glass-card { background: rgba(17, 24, 39, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .glass-card:hover { border-color: #38bdf8; transform: translateY(-8px); background: rgba(17, 24, 39, 0.9); }
-        .gradient-text { background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        
+        /* Perspective for the flip cards */
+        .perspective-1000 { perspective: 1000px; }
+        .card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .card-inner.is-flipped { transform: rotateY(180deg); }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .card-back { transform: rotateY(180deg); }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #2563eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-4 bg-gray-950/50 backdrop-blur-xl border-b border-white/5">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <div class="text-xl font-bold tracking-tighter">AA<span class="text-sky-500">.</span></div>
-            <div class="space-x-8 text-xs font-semibold uppercase tracking-widest">
-                <a href="#experience" class="hover:text-sky-400">Experience</a>
-                <a href="#awards" class="hover:text-sky-400">Awards</a>
-                <a href="mailto:arpitagrawall102@gmail.com" class="text-sky-400">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="min-h-screen flex items-center justify-center px-6">
-        <div class="max-w-4xl text-center">
-            <h2 class="text-sky-500 font-bold tracking-[0.3em] uppercase text-sm mb-4">Transformation Manager @ KPMG</h2>
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tight">Arpit <span class="gradient-text">Agrawal</span></h1>
-            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
-                IIT Roorkee Alumnus driving Digital Strategy & Transformation. 
-                Delivering high-impact solutions across FinTech and Insurance sectors.
+    <header class="min-h-screen flex items-center justify-center bg-white border-b border-slate-200">
+        <div class="max-w-4xl px-6 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                Hello. I’m <span class="gradient-text">Arpit.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-slate-600 mb-8 leading-relaxed">
+                I turn operational friction into <span class="font-semibold text-blue-600">8X growth.</span> 
+                A seasoned consultant from <span class="font-semibold">IIT Roorkee</span> obsessed with AI-driven transformation 
+                and the Financial Services landscape.
             </p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 py-8 border-y border-white/5">
-                <div><span class="block text-3xl font-bold">₹50Cr</span><span class="text-[10px] text-gray-500 uppercase">OpEx Saved</span></div>
-                <div><span class="block text-3xl font-bold">8X</span><span class="text-[10px] text-gray-500 uppercase">Growth</span></div>
-                <div><span class="block text-3xl font-bold">50%</span><span class="text-[10px] text-gray-500 uppercase">TAT Reduction</span></div>
-                <div><span class="block text-3xl font-bold">10%</span><span class="text-[10px] text-gray-500 uppercase">Conv. Lift</span></div>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition">View My Projects</a>
+                <a href="#about" class="px-8 py-3 border border-slate-300 rounded-full font-semibold hover:bg-slate-50 transition">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 border-l-4 border-blue-600 pl-4">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2 text-lg text-slate-600 space-y-4">
+                    [span_0](start_span)<p>I am a Growth and Operations transformation specialist with over 8+ years of experience[span_0](end_span). [span_1](start_span)I specialize in identifying customer pain points and building AI-driven interventions to optimize the distribution network[span_1](end_span).</p>
+                    [span_2](start_span)<p>My expertise lies deep within the Financial Services industry, particularly in Broking and Insurance[span_2](end_span).</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <h3 class="font-bold mb-4">Connect With Me</h3>
+                    <ul class="space-y-3 text-slate-600">
+                        [span_3](start_span)<li><i class="fas fa-phone mr-2 text-blue-600"></i> +91-9927081879[span_3](end_span)</li>
+                        [span_4](start_span)<li><i class="fas fa-envelope mr-2 text-blue-600"></i> arpitagrawal1102@gmail.com[span_4](end_span)</li>
+                        [span_5](start_span)<li><i class="fas fa-graduation-cap mr-2 text-blue-600"></i> IIT Roorkee, Class of 2017[span_5](end_span)</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 px-6 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-bold mb-16 text-center">Professional Path</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-            
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="flex justify-between items-start mb-6">
-                    <h4 class="text-2xl font-bold text-white">KPMG India</h4>
-                    <span class="text-slate-500 text-sm">2022 - Present</span>
-                </div>
-                <ul class="space-y-4 text-slate-400 text-sm leading-relaxed">
-                    [span_0](start_span)<li>• Saved <strong>INR 50Cr</strong> in operational expenses through process re-design[span_0](end_span).</li>
-                    [span_1](start_span)<li>• Developed 5-year growth strategy blueprints for Small Finance Banks[span_1](end_span).</li>
-                    [span_2](start_span)<li>• Reduced query resolution TAT by <strong>50%</strong> via CRM implementation[span_2](end_span).</li>
-                </ul>
-            </div>
-
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="flex justify-between items-start mb-6">
-                    <h4 class="text-2xl font-bold text-white">Angel One</h4>
-                    <span class="text-slate-500 text-sm">2019 - 2021</span>
-                </div>
-                <ul class="space-y-4 text-slate-400 text-sm leading-relaxed">
-                    [span_3](start_span)<li>• Launched industry-first trading mobile app in <strong>8 Indian languages</strong>[span_3](end_span).</li>
-                    [span_4](start_span)<li>• Scaled referral sales from 15% to 40%, with <strong>8X actual growth</strong>[span_4](end_span).</li>
-                    [span_5](start_span)<li>• Managed Lead Management Systems for 800+ sales force[span_5](end_span).</li>
-                </ul>
-            </div>
-
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="flex justify-between items-start mb-6">
-                    <h4 class="text-2xl font-bold text-white">Kotak Securities</h4>
-                    <span class="text-slate-500 text-sm">2021 - 2022</span>
-                </div>
-                <ul class="space-y-4 text-slate-400 text-sm leading-relaxed">
-                    [span_6](start_span)<li>• Improved referral conversions by <strong>10%</strong> within 6 months[span_6](end_span).</li>
-                    [span_7](start_span)<li>• Product owner for digital DEMAT account opening and Lead Management System[span_7](end_span).</li>
-                </ul>
-            </div>
-
-            <div class="glass-card p-10 rounded-3xl">
-                <div class="flex justify-between items-start mb-6">
-                    <h4 class="text-2xl font-bold text-white">PwC India</h4>
-                    <span class="text-slate-500 text-sm">2017 - 2019</span>
-                </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    [span_8](start_span)Program managed the building of a mobile app for sales agents to sell paperless health insurance (first in industry then)[span_8](end_span).
-                </p>
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center">My Skills</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Business Analysis</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Digital & AI Transformation</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Growth Strategy</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Operating Model Designing</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Cost Optimization</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Product Development</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Implementation Program Management</span>
+                <span class="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm font-medium">Change Management</span>
             </div>
         </div>
     </section>
 
-    <section id="awards" class="py-24 bg-gray-950/50 px-6">
-        <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl font-bold mb-12 text-center">Recognition</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 border-l-4 border-blue-600 pl-4">Work Experience</h2>
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row md:justify-between border-b pb-8 border-slate-100">
                     <div>
-                        <p class="text-white font-semibold text-sm">CEO Award - Employee of the Year</p>
-                        [span_9](start_span)<p class="text-gray-500 text-[10px] uppercase">Angel One[span_9](end_span)</p>
+                        <h3 class="text-xl font-bold">KPMG India</h3>
+                        <p class="text-blue-600 font-medium">Manager, Business Consulting (Customer & Operations – FS)</p>
                     </div>
-                    <span class="text-sky-500 font-bold">🏆</span>
+                    <p class="text-slate-500 font-medium">Feb 2022 – Present</p>
                 </div>
-                <div class="glass-card p-6 rounded-2xl flex items-center justify-between">
+                <div class="flex flex-col md:flex-row md:justify-between border-b pb-8 border-slate-100">
                     <div>
-                        <p class="text-white font-semibold text-sm">KPMG Impact Award</p>
-                        [span_10](start_span)<p class="text-gray-500 text-[10px] uppercase">Strategy Blueprint[span_10](end_span)</p>
+                        <h3 class="text-xl font-bold">Kotak Securities</h3>
+                        <p class="text-blue-600 font-medium">Associate Vice President, Products and Special Projects</p>
                     </div>
-                    <span class="text-sky-400 font-bold">🏆</span>
+                    <p class="text-slate-500 font-medium">July 2021 – Feb 2022</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:justify-between border-b pb-8 border-slate-100">
+                    <div>
+                        <h3 class="text-xl font-bold">Angel One</h3>
+                        <p class="text-blue-600 font-medium">Senior Manager, Digital Strategy & Transformation – Growth</p>
+                    </div>
+                    <p class="text-slate-500 font-medium">April 2019 – July 2021</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold">PwC India</h3>
+                        <p class="text-blue-600 font-medium">Associate Consultant, Digital Transformation – FS</p>
+                    </div>
+                    <p class="text-slate-500 font-medium">July 2017 – April 2019</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center border-t border-white/5">
-        <p class="text-gray-600 text-[10px] tracking-[0.3em] uppercase">
-            © 2026 Arpit Agrawal · IIT Roorkee '17
-        </p>
+    <section id="projects" class="py-20 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">Key Projects</h2>
+            <p class="text-center text-slate-500 mb-12">Click a card to see the impact & details</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="perspective-1000 h-[400px]" onclick="flipCard(this)">
+                    <div class="card-inner relative w-full h-full shadow-lg rounded-2xl">
+                        <div class="card-front absolute w-full h-full bg-white p-8 rounded-2xl flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">KPMG</span>
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-400">K</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Insurance Merger Strategy</h3>
+                                <p class="text-slate-600 text-sm italic">Designed the merger strategy for InsuranceDekho & RenewBuy channels.</p>
+                            </div>
+                            <span class="text-blue-600 text-sm font-bold">Tap to flip →</span>
+                        </div>
+                        <div class="card-back absolute w-full h-full bg-blue-600 text-white p-8 rounded-2xl overflow-y-auto">
+                            <h3 class="font-bold mb-4 border-b border-blue-400 pb-2">Impact & Details</h3>
+                            <ul class="text-sm space-y-2 list-disc pl-4">
+                                [span_6](start_span)<li>Savings of 32Cr from distribution synergy[span_6](end_span)</li>
+                                [span_7](start_span)<li>Operational capacity building for 5X growth[span_7](end_span)</li>
+                                [span_8](start_span)<li>Designed B2B/B2C merge strategy & operating model[span_8](end_span)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perspective-1000 h-[400px]" onclick="flipCard(this)">
+                    <div class="card-inner relative w-full h-full shadow-lg rounded-2xl">
+                        <div class="card-front absolute w-full h-full bg-white p-8 rounded-2xl flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold text-blue-500 uppercase tracking-widest">KPMG</span>
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-400">K</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">BPR & Cost Optimization</h3>
+                                <p class="text-slate-600 text-sm italic">Operations blueprint for Ageas Federal Life Insurance.</p>
+                            </div>
+                            <span class="text-blue-600 text-sm font-bold">Tap to flip →</span>
+                        </div>
+                        <div class="card-back absolute w-full h-full bg-blue-600 text-white p-8 rounded-2xl overflow-y-auto">
+                            <h3 class="font-bold mb-4 border-b border-blue-400 pb-2">Impact & Details</h3>
+                            <ul class="text-sm space-y-2 list-disc pl-4">
+                                [span_9](start_span)<li>70% reduction in claims settlement TAT[span_9](end_span)</li>
+                                [span_10](start_span)<li>50Cr savings in operational expenses[span_10](end_span)</li>
+                                [span_11](start_span)<li>40% reduction in policy issuance TAT[span_11](end_span)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perspective-1000 h-[400px]" onclick="flipCard(this)">
+                    <div class="card-inner relative w-full h-full shadow-lg rounded-2xl">
+                        <div class="card-front absolute w-full h-full bg-white p-8 rounded-2xl flex flex-col justify-between">
+                            <div class="flex justify-between items-start">
+                                <span class="text-xs font-bold text-orange-500 uppercase tracking-widest">Angel One</span>
+                                <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center font-bold text-slate-400">A</div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Referral Program Transformation</h3>
+                                <p class="text-slate-600 text-sm italic">Overhauled customer acquisition via referrals.</p>
+                            </div>
+                            <span class="text-blue-600 text-sm font-bold">Tap to flip →</span>
+                        </div>
+                        <div class="card-back absolute w-full h-full bg-orange-500 text-white p-8 rounded-2xl overflow-y-auto">
+                            <h3 class="font-bold mb-4 border-b border-orange-300 pb-2">Impact & Details</h3>
+                            <ul class="text-sm space-y-2 list-disc pl-4">
+                                [span_12](start_span)<li>8X increase in overall referral%[span_12](end_span)</li>
+                                [span_13](start_span)<li>Referral contribution grew from 15% to 40%[span_13](end_span)</li>
+                                [span_14](start_span)<li>Automated reward processing & marketplace setup[span_14](end_span)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 border-l-4 border-blue-600 pl-4">Achievements</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800">Professional Honors</h3>
+                    <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                        <i class="fas fa-trophy text-yellow-500 mt-1"></i>
+                        <div>
+                            <p class="font-semibold">Employee of the Year (CEO Award)</p>
+                            <p class="text-sm text-slate-500 italic">Angel One, 2021</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-slate-50 rounded-xl">
+                        <i class="fas fa-award text-blue-500 mt-1"></i>
+                        <div>
+                            <p class="font-semibold">Above & Beyond Award</p>
+                            <p class="text-sm text-slate-500 italic">KPMG India, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-slate-800">Personal & Academic</h3>
+                    <ul class="list-disc pl-6 space-y-2 text-slate-600">
+                        <li><strong>AIR 4523 (General)</strong> - IITJEE</li>
+                        <li><strong>Head of Events</strong> - Thomso, IIT Roorkee (2015)</li>
+                        [span_15](start_span)<li><strong>Innovative Design Award</strong> - Cognizant Tech Fest[span_15](end_span)</li>
+                        <li>Winner - Intra-department Badminton (2015, 2016)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-900 text-white text-center">
+        <p class="opacity-50 text-sm">© 2026 Arpit Agrawal. Built for Growth.</p>
     </footer>
 
+    <script>
+        function flipCard(element) {
+            const inner = element.querySelector('.card-inner');
+            inner.classList.toggle('is-flipped');
+        }
+    </script>
 </body>
 </html>
