@@ -35,7 +35,7 @@
     .menu-nav li{border-bottom:1px solid rgba(255,255,255,.08);}
     .menu-nav a{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;text-decoration:none;color:rgba(255,255,255,.82);font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;transition:color .2s;}
     .menu-nav a:hover{color:var(--teal);}
-    .menu-nav a::after{content:'&#8599;';font-size:.8rem;opacity:0;transform:translateX(-6px);transition:all .2s;font-family:'DM Sans',sans-serif;}
+    .menu-nav a::after{content:'↗';font-size:.8rem;opacity:0;transform:translateX(-6px);transition:all .2s;font-family:'DM Sans',sans-serif;}
     .menu-nav a:hover::after{opacity:1;transform:translateX(0);}
     .menu-contact-btn{display:block;background:var(--rose);color:#fff;text-align:center;padding:.75rem 1.5rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:8px;margin-top:1.4rem;transition:background .2s;}
     .menu-contact-btn:hover{background:var(--violet);}
@@ -103,7 +103,7 @@
     /* PROJECTS */
     #experience{background:var(--bg);}
     .flip-hint-global{font-size:.74rem;color:var(--muted);font-style:italic;margin-bottom:1.6rem;display:flex;align-items:center;gap:.4rem;}
-    .flip-hint-global::before{content:'&#8597;';color:var(--violet);font-style:normal;}
+    .flip-hint-global::before{content:'↕';color:var(--violet);font-style:normal;}
     .pc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
     /* uniform square cards */
     .pc-card{border-radius:14px;cursor:pointer;user-select:none;-webkit-tap-highlight-color:transparent;position:relative;aspect-ratio:1/1;overflow:hidden;transition:box-shadow .22s,transform .18s;}
@@ -127,18 +127,17 @@
     .pf-bottom{display:flex;justify-content:space-between;align-items:flex-end;margin-top:8px;flex-shrink:0;}
     .pf-duration{font-size:.58rem;font-weight:500;opacity:.52;color:inherit;}
     .pf-cue{font-size:.54rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;opacity:.4;color:inherit;}
-    .pf-cue::after{content:'Details &#9698;';}
-    .pc-card.open .pf-cue::after{content:'Close &#9652;';}
+    .pf-cue::after{content:'Details ▾';}
+    .pc-card.open .pf-cue::after{content:'Close ▴';}
     /* detail overlay elements */
-    .pd-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-shrink:0;}
-    .pd-company{font-size:.6rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.1em;}
-    .pd-close{font-size:.56rem;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.05em;}
+    .pd-close-bar{margin-top:auto;padding-top:8px;text-align:center;flex-shrink:0;}
+    .pd-close{font-size:.56rem;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.06em;}
     .pd-title{font-weight:700;font-size:.78rem;color:#fff;margin-bottom:7px;line-height:1.3;flex-shrink:0;}
     .pd-brief{font-size:.68rem;color:rgba(255,255,255,.82);line-height:1.5;margin-bottom:8px;flex:1;}
     .pd-imp-label{font-size:.54rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--teal);margin-bottom:4px;flex-shrink:0;}
     .pd-impacts{list-style:none;flex-shrink:0;}
     .pd-impacts li{font-size:.67rem;color:rgba(255,255,255,.88);line-height:1.4;padding-left:12px;position:relative;margin-bottom:3px;}
-    .pd-impacts li::before{content:'&#8593;';position:absolute;left:0;color:var(--teal);font-weight:700;font-size:.62rem;}
+    .pd-impacts li::before{content:'↑';position:absolute;left:0;color:var(--teal);font-weight:700;font-size:.62rem;}
     /* card colours */
     .card-navy{background:#1e2d5e;color:#fff;}
     .card-sky{background:#d6eaf8;color:#1a3a5e;}
@@ -196,7 +195,7 @@
 <nav>
   <a class="nav-logo" href="#home">AA.</a>
   <div class="nav-right">
-    <a href="mailto:arpitagrawal1102@gmail.com" class="nav-contact-btn">Get in Touch</a>
+    <a href="/cdn-cgi/l/email-protection#87e6f5f7eef3e6e0f5e6f0e6ebb6b6b7b5c7e0eae6eeeba9e4e8ea" class="nav-contact-btn">Get in Touch</a>
     <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -214,8 +213,8 @@
         <li><a href="#experience" class="menu-link">Projects</a></li>
         <li><a href="#achievements" class="menu-link">Achievements</a></li>
       </ul>
-      <a href="mailto:arpitagrawal1102@gmail.com" class="menu-contact-btn">&#9993; Get in Touch</a>
-      <p class="menu-footer">arpitagrawal1102@gmail.com<br/>+91-9927081879</p>
+      <a href="/cdn-cgi/l/email-protection#ccadbebca5b8adabbeadbbada0fdfdfcfe8caba1ada5a0e2afa3a1" class="menu-contact-btn">✉ Get in Touch</a>
+      <p class="menu-footer"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6d7c4c6dfc2d7d1c4d7c1d7da87878684f6d1dbd7dfda98d5d9db">[email&#160;protected]</a><br/>+91-9927081879</p>
     </div>
   </div>
 </div>
@@ -236,9 +235,9 @@
   <div class="hero-right">
     <div class="contact-box">
       <h3>Contact Details</h3>
-      <div class="contact-row"><div class="contact-icon">&#9993;</div><span>arpitagrawal1102@gmail.com</span></div>
-      <div class="contact-row"><div class="contact-icon">&#128222;</div><span>+91-9927081879</span></div>
-      <div class="contact-row"><div class="contact-icon">&#128205;</div><span>India</span></div>
+      <div class="contact-row"><div class="contact-icon">✉</div><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9cfdeeecf5e8fdfbeefdebfdf0adadacaedcfbf1fdf5f0b2fff3f1">[email&#160;protected]</a></span></div>
+      <div class="contact-row"><div class="contact-icon">📞</div><span>+91-9927081879</span></div>
+      <div class="contact-row"><div class="contact-icon">📍</div><span>India</span></div>
     </div>
     <div class="edu-box">
       <p>Education</p>
@@ -253,12 +252,12 @@
   <div class="section-label">Core Competencies</div>
   <h2 class="section-title">What I Bring to the Table</h2>
   <div class="skills-grid">
-    <div class="skill-tile"><div class="skill-icon">&#128269;</div><div class="skill-name">Business Analysis &amp; Strategy</div></div>
-    <div class="skill-tile"><div class="skill-icon">&#129302;</div><div class="skill-name">Digital &amp; AI Transformation</div></div>
-    <div class="skill-tile"><div class="skill-icon">&#128200;</div><div class="skill-name">Growth Strategy &amp; Innovation</div></div>
-    <div class="skill-tile"><div class="skill-icon">&#127959;</div><div class="skill-name">Operating Model Design</div></div>
-    <div class="skill-tile"><div class="skill-icon">&#127912;</div><div class="skill-name">Journey &amp; Product Design</div></div>
-    <div class="skill-tile"><div class="skill-icon">&#128176;</div><div class="skill-name">Cost Optimisation &amp; Change Mgmt</div></div>
+    <div class="skill-tile"><div class="skill-icon">🔍</div><div class="skill-name">Business Analysis &amp; Strategy</div></div>
+    <div class="skill-tile"><div class="skill-icon">🤖</div><div class="skill-name">Digital &amp; AI Transformation</div></div>
+    <div class="skill-tile"><div class="skill-icon">📈</div><div class="skill-name">Growth Strategy &amp; Innovation</div></div>
+    <div class="skill-tile"><div class="skill-icon">🏗️</div><div class="skill-name">Operating Model Design</div></div>
+    <div class="skill-tile"><div class="skill-icon">🎨</div><div class="skill-name">Journey &amp; Product Design</div></div>
+    <div class="skill-tile"><div class="skill-icon">💰</div><div class="skill-name">Cost Optimisation &amp; Change Mgmt</div></div>
   </div>
 </section>
 <!-- TIMELINE -->
@@ -318,14 +317,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Distribution channel merger &mdash; InsuranceDekho &amp; RenewBuy</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">KPMG &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Distribution Channel Merger</div>
         <div class="pd-brief">Designed B2C &amp; B2B merger strategy and unified operating model to unlock synergy across InsuranceDekho &amp; RenewBuy.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>&#8377;32 Cr savings from distribution synergy</li><li>Capacity for up to 5X business growth</li></ul>
+        <ul class="pd-impacts"><li>₹32 Cr savings from distribution synergy</li><li>Capacity for up to 5X business growth</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-sky">
@@ -333,14 +332,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">BPR blueprint &amp; cost optimisation &mdash; Ageas Federal Life Insurance</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 4 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 4 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">KPMG &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">BPR &amp; Cost Optimisation</div>
         <div class="pd-brief">Benchmarked to industry leaders, designed future-state operating model and full transformation roadmap.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>Policy issuance TAT &#8595; 40%</li><li>Claims TAT &#8595; 70% &middot; NPS &#8593; 5 pts</li><li>&#8377;50 Cr opex savings</li></ul>
+        <ul class="pd-impacts"><li>Policy issuance TAT ↓ 40%</li><li>Claims TAT ↓ 70% &middot; NPS ↑ 5 pts</li><li>₹50 Cr opex savings</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-mint">
@@ -348,14 +347,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">5-year growth strategy &mdash; Utkarsh Small Finance Bank (Pre-IPO)</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">KPMG &middot; Banking</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">5-Year Growth Blueprint</div>
         <div class="pd-brief">Physical &amp; digital expansion, GTM sourcing, customer journey redesign across assets &amp; liability products for pre-IPO SFB.</div>
         <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>Roadmap for 8X growth in 5 years</li><li>Sales productivity framework built</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-peach">
@@ -363,14 +362,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">KPMG India</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">E2E auto-loan disbursement journey &mdash; Toyota Financial Services India</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">KPMG &middot; Auto-Loan</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Auto-Loan Disbursement Journey</div>
         <div class="pd-brief">Designed DIY &amp; assisted sales journey, wireframes, UI/UX; program managed PWA with 15+ vendor partners.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>Avg disbursement TAT &#8595; 3 days</li><li>Sales exec productivity &#8593; 2 files/day</li></ul>
+        <ul class="pd-impacts"><li>Avg disbursement TAT ↓ 3 days</li><li>Sales exec productivity ↑ 2 files/day</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-yellow">
@@ -378,14 +377,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Kotak Securities</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">DIY DMAT account opening journey optimisation</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 6 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 6 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">Kotak &middot; Product</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">DMAT Journey Optimisation</div>
         <div class="pd-brief">Product backlog refinement, drop-off funnel optimisation, and lead management improvements managed end-to-end.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>DIY lead-to-conversion &#8593; 5%</li><li>Funnel drop-offs significantly reduced</li></ul>
+        <ul class="pd-impacts"><li>DIY lead-to-conversion ↑ 5%</li><li>Funnel drop-offs significantly reduced</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-lavender">
@@ -393,14 +392,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Kotak Securities</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Influencer marketing program &mdash; built from scratch as a new acquisition channel</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 3 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 3 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">Kotak &middot; Growth</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Influencer Marketing Program</div>
         <div class="pd-brief">Designed complete program: reward construct, journeys, target market, ops unit setup, reward processing, and first-year roadmap.</div>
         <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>+10,000 new accounts via influencer channel</li><li>New growth arm launched from zero</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-teal">
@@ -408,14 +407,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Referral program transformation &mdash; new customer acquisition engine</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">Angel One &middot; Growth</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Referral Program Transformation</div>
         <div class="pd-brief">Refined journeys &amp; dashboards; introduced DIY, automations, reward marketplace &amp; instant reward processing.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>Referral rate &#8593; 8X</li><li>Sales contribution: 15% &#8594; 40%</li></ul>
+        <ul class="pd-impacts"><li>Referral rate ↑ 8X</li><li>Sales contribution: 15% → 40%</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-sage">
@@ -423,14 +422,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Vernacular language integration &mdash; 8 Indian languages, first in industry</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 9 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 9 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">Angel One &middot; Innovation</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Vernacular Language Integration</div>
         <div class="pd-brief">Introduced 8 Indian languages in core trading app &amp; web &mdash; driving inclusion in Tier 3/4 city markets.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>&#8593; DIY account opening % in Tier 3/4 cities</li><li>First-in-industry vernacular milestone</li></ul>
+        <ul class="pd-impacts"><li>↑ DIY account opening % in Tier 3/4 cities</li><li>First-in-industry vernacular milestone</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-coral">
@@ -438,14 +437,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">Angel One</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Digital transformation &mdash; MF &amp; insurance cross-sell platform</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 12 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 12 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">Angel One &middot; Cross-sell</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">MF &amp; Insurance Cross-sell</div>
         <div class="pd-brief">DIY &amp; assisted sales journeys for Life &amp; Health insurance; MF sub-broker registration and activation platform built.</div>
         <div class="pd-imp-label">Impact</div>
-        <ul class="pd-impacts"><li>Insurance cross-sell &#8593; 10%</li><li>MF onboarding TAT reduced</li></ul>
+        <ul class="pd-impacts"><li>Insurance cross-sell ↑ 10%</li><li>MF onboarding TAT reduced</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
     <div class="pc-card card-rose">
@@ -453,14 +452,14 @@
         <div class="pf-logo-row"><img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt=""/><span class="pf-company-name">PwC India</span></div>
         <div class="pf-divider"></div>
         <div class="pf-summary">Real-time paperless health insurance issuance &mdash; Reliance Health Insurance</div>
-        <div class="pf-bottom"><span class="pf-duration">&#9203; 15 months</span><span class="pf-cue"></span></div>
+        <div class="pf-bottom"><span class="pf-duration">⏱ 15 months</span><span class="pf-cue"></span></div>
       </div>
       <div class="pc-detail">
-        <div class="pd-header"><span class="pd-company">PwC &middot; Insurance</span><span class="pd-close">Tap to close &#8617;</span></div>
         <div class="pd-title">Paperless Policy Issuance</div>
         <div class="pd-brief">Designed full customer &amp; assisted sales journey; wireframes, UI/UX, business rules; program managed with 20+ vendor partners.</div>
         <div class="pd-imp-label">Impact</div>
         <ul class="pd-impacts"><li>First-in-industry real-time paperless issuance</li><li>20+ vendor integrations end-to-end</li></ul>
+        <div class="pd-close-bar"><span class="pd-close">Tap to close ↩</span></div>
       </div>
     </div>
   </div>
@@ -473,18 +472,18 @@
   <div class="ach-grid">
     <div class="ach-col">
       <h3>Professional</h3>
-      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Above &amp; Beyond Award for Strategy Blueprint project (Mar 2023)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Impact Award by Partner for Strategy Blueprint project (Nov 2022)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>KPMG</strong> &mdash; Kudos Award for Implementation project at NSDL (Aug 2022)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>Angel One</strong> &mdash; Employee of the Year, CEO Award (Mar 2021)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#9733;</div><div class="ach-text"><strong>PwC India</strong> &mdash; R&amp;R Award for large-scale implementation project (2018)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> &mdash; Above &amp; Beyond Award for Strategy Blueprint project (Mar 2023)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> &mdash; Impact Award by Partner for Strategy Blueprint project (Nov 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> &mdash; Kudos Award for Implementation project at NSDL (Aug 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>Angel One</strong> &mdash; Employee of the Year, CEO Award (Mar 2021)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>PwC India</strong> &mdash; R&amp;R Award for large-scale implementation project (2018)</div></div>
     </div>
     <div class="ach-col">
       <h3>Pre-Professional</h3>
-      <div class="ach-item"><div class="ach-bullet">&#127891;</div><div class="ach-text"><strong>IIT Roorkee</strong> &mdash; Head of Events, Thomso Annual Cultural Festival (2015)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#127952;</div><div class="ach-text">Winner &mdash; Intra-department Badminton Competition (2015, 2016)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#127942;</div><div class="ach-text">Innovative Design Award &mdash; RC Car Racing, Cognizant, IIT Roorkee (2014)</div></div>
-      <div class="ach-item"><div class="ach-bullet">&#127919;</div><div class="ach-text">IIT JEE &mdash; All India Rank 4523 (General Category)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🎓</div><div class="ach-text"><strong>IIT Roorkee</strong> &mdash; Head of Events, Thomso Annual Cultural Festival (2015)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🏸</div><div class="ach-text">Winner &mdash; Intra-department Badminton Competition (2015, 2016)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🏆</div><div class="ach-text">Innovative Design Award &mdash; RC Car Racing, Cognizant, IIT Roorkee (2014)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🎯</div><div class="ach-text">IIT JEE &mdash; All India Rank 4523 (General Category)</div></div>
     </div>
   </div>
 </section>
@@ -493,10 +492,10 @@
 <footer>
   <p style="color:#fff;font-family:'Playfair Display',serif;font-size:1.05rem;margin-bottom:.3rem;">Arpit Agrawal</p>
   <p>Growth &amp; Operations Transformation Specialist &middot; IIT Roorkee &rsquo;17</p>
-  <p style="margin-top:.5rem;"><a href="mailto:arpitagrawal1102@gmail.com">arpitagrawal1102@gmail.com</a> &nbsp;&middot;&nbsp; +91-9927081879</p>
+  <p style="margin-top:.5rem;"><a href="/cdn-cgi/l/email-protection#90f1e2e0f9e4f1f7e2f1e7f1fca1a1a0a2d0f7fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="7b1a090b120f1a1c091a0c1a174a4a4b493b1c161a121755181416">[email&#160;protected]</span></a> &nbsp;&middot;&nbsp; +91-9927081879</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var burger = document.getElementById('hamburger');
   var overlay = document.getElementById('menuOverlay');
   var backdrop = document.getElementById('menuBackdrop');
@@ -522,7 +521,7 @@
     link.addEventListener('click', function(e) {
       var href = this.getAttribute('href');
       if (href && href[0] === '#') {
-        e.preventDefault();
+        e.preventDefault()
         closeMenu();
         setTimeout(function() {
           var t = document.querySelector(href);
