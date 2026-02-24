@@ -1,162 +1,822 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arpit Agrawal | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; }
-        .perspective-1000 { perspective: 1000px; }
-        .card-inner { transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); transform-style: preserve-3d; cursor: pointer; height: 100%; position: relative; }
-        .card-inner.is-flipped { transform: rotateY(180deg); }
-        .card-front, .card-back { backface-visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem; padding: 1.5rem; }
-        .card-back { transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; }
-        .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #3b82f6; }
-        @media (min-width: 768px) { .timeline::before { left: 50%; } }
-    </style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arpit Agrawal — Growth & Operations Specialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:      #f0f4ff;
+      --surface: #ffffff;
+      --navy:    #2d3a6b;
+      --violet:  #6b5ea8;
+      --rose:    #e86fa3;
+      --teal:    #2abfbf;
+      --muted:   #7a8299;
+      --border:  #dde3f5;
+      --text:    #2c3050;
+      --subtext: #5a6080;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ════════════════════════════════
+       NAV
+    ════════════════════════════════ */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 4rem;
+      background: rgba(240,244,255,0.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900; font-size: 1.3rem;
+      color: var(--navy); text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.2rem; }
+    .nav-contact-btn {
+      background: var(--violet); color: #fff;
+      padding: 0.55rem 1.4rem; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 6px; transition: background 0.2s;
+    }
+    .nav-contact-btn:hover { background: var(--navy); }
+
+    .hamburger {
+      width: 40px; height: 40px;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center; gap: 5px;
+      cursor: pointer; background: var(--surface);
+      border: 1.5px solid var(--border); border-radius: 8px;
+      padding: 8px; transition: border-color 0.2s;
+      position: relative; z-index: 300;
+    }
+    .hamburger:hover { border-color: var(--violet); }
+    .hamburger span {
+      display: block; width: 18px; height: 1.5px;
+      background: var(--navy); transition: all 0.3s ease; transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); background: var(--violet); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); background: var(--violet); }
+
+    /* slide-in menu */
+    .menu-overlay { position: fixed; inset: 0; z-index: 150; pointer-events: none; }
+    .menu-backdrop { position: absolute; inset: 0; background: rgba(45,58,107,0); transition: background 0.4s; }
+    .menu-panel {
+      position: absolute; top: 0; right: 0; width: 340px; height: 100vh;
+      background: var(--navy); transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.77,0,0.18,1);
+      display: flex; flex-direction: column; padding: 7rem 2.5rem 2.5rem;
+    }
+    .menu-overlay.open { pointer-events: all; }
+    .menu-overlay.open .menu-backdrop { background: rgba(45,58,107,0.5); }
+    .menu-overlay.open .menu-panel { transform: translateX(0); }
+
+    .menu-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); font-weight: 600; margin-bottom: 1.5rem; }
+    .menu-nav { list-style: none; flex: 1; }
+    .menu-nav li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .menu-nav a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.05rem 0; text-decoration: none;
+      color: rgba(255,255,255,0.8);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem; font-weight: 700; transition: color 0.2s;
+    }
+    .menu-nav a:hover { color: var(--teal); }
+    .menu-nav a::after { content: '↗'; font-size: 0.9rem; opacity: 0; transform: translateX(-8px); transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+    .menu-nav a:hover::after { opacity: 1; transform: translateX(0); }
+    .menu-contact-btn {
+      display: block; background: var(--rose); color: #fff;
+      text-align: center; padding: 0.9rem 2rem;
+      font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; text-decoration: none;
+      border-radius: 8px; margin-top: 1.8rem; transition: background 0.2s;
+    }
+    .menu-contact-btn:hover { background: var(--violet); }
+    .menu-footer { margin-top: 1.5rem; font-size: 0.72rem; color: rgba(255,255,255,0.25); line-height: 1.8; }
+
+    /* ════════════════════════════════
+       HERO
+    ════════════════════════════════ */
+    #home { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 72px; }
+    .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 4rem 5rem 5rem; }
+    .hero-tag {
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--violet); font-weight: 600; margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-tag::before { content: ''; display: block; width: 2rem; height: 2px; background: var(--violet); border-radius: 2px; }
+    .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 900; line-height: 1.0; letter-spacing: -0.03em; color: var(--navy); margin-bottom: 0.3rem; }
+    .hero-name span { color: var(--violet); }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(1rem, 1.8vw, 1.3rem); font-weight: 400; font-style: italic; color: var(--muted); margin-bottom: 2rem; }
+    .hero-bio { font-size: 0.97rem; color: var(--subtext); max-width: 460px; line-height: 1.85; margin-bottom: 2.5rem; }
+    .hero-stats { display: flex; gap: 2.5rem; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 700; color: var(--violet); line-height: 1; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+
+    .hero-right {
+      background: linear-gradient(145deg, #e8edff 0%, #f3e8ff 50%, #e8f7ff 100%);
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      padding: 4rem; position: relative; overflow: hidden;
+    }
+    .hero-right::before {
+      content: 'AA'; position: absolute;
+      font-family: 'Playfair Display', serif; font-size: 20rem; font-weight: 900;
+      color: rgba(107,94,168,0.06); right: -3rem; bottom: -2rem; line-height: 1; pointer-events: none;
+    }
+    .contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; width: 100%; max-width: 340px; margin-bottom: 1.5rem; box-shadow: 0 8px 32px rgba(107,94,168,0.1); }
+    .contact-box h3 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.1rem; margin-bottom: 1.2rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.85rem; color: var(--subtext); font-size: 0.88rem; }
+    .contact-icon { width: 34px; height: 34px; background: var(--bg); border: 1px solid var(--border); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .edu-box { background: var(--violet); border-radius: 14px; padding: 1.3rem 2rem; width: 100%; max-width: 340px; }
+    .edu-box p { color: rgba(255,255,255,0.7); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.2rem; }
+    .edu-box strong { color: #fff; font-size: 1rem; font-family: 'Playfair Display', serif; }
+
+    /* ════════════════════════════════
+       SHARED SECTION STYLES
+    ════════════════════════════════ */
+    section { padding: 5.5rem 5rem; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--violet); font-weight: 600; margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .section-label::before { content: ''; display: block; width: 2rem; height: 2px; background: var(--violet); border-radius: 2px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 700; line-height: 1.15; color: var(--navy); margin-bottom: 3rem; letter-spacing: -0.02em; }
+
+    /* ════════════════════════════════
+       SKILLS
+    ════════════════════════════════ */
+    #skills { background: linear-gradient(135deg, #e8edff 0%, #f3e8ff 100%); }
+    .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+    .skill-card { background: var(--surface); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); box-shadow: 0 2px 12px rgba(107,94,168,0.06); transition: transform 0.25s, box-shadow 0.25s; }
+    .skill-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(107,94,168,0.14); }
+    .skill-num { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--violet); opacity: 0.2; line-height: 1; margin-bottom: 0.4rem; }
+    .skill-name { font-weight: 600; font-size: 0.97rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .skill-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.55; }
+
+    /* ════════════════════════════════
+       TIMELINE
+    ════════════════════════════════ */
+    #timeline { background: var(--surface); }
+    .timeline-wrap { position: relative; }
+    .timeline-wrap::before {
+      content: ''; position: absolute; left: 155px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--violet), var(--teal)); border-radius: 2px;
+    }
+    .tl-item { display: grid; grid-template-columns: 150px 36px 1fr; margin-bottom: 2.5rem; position: relative; align-items: flex-start; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-date { text-align: right; padding-right: 1.2rem; padding-top: 0.25rem; }
+    .tl-date-main { font-size: 0.82rem; font-weight: 600; color: var(--navy); }
+    .tl-date-sub { font-size: 0.72rem; color: var(--muted); }
+    .tl-dot-wrap { display: flex; justify-content: center; padding-top: 0.3rem; z-index: 2; position: relative; }
+    .tl-dot { width: 14px; height: 14px; border-radius: 50%; border: 3px solid var(--surface); flex-shrink: 0; }
+    .tl-item:nth-child(1) .tl-dot { background: #2f80c8; box-shadow: 0 0 0 2px #2f80c8; }
+    .tl-item:nth-child(2) .tl-dot { background: #e07b2a; box-shadow: 0 0 0 2px #e07b2a; }
+    .tl-item:nth-child(3) .tl-dot { background: #2faa6e; box-shadow: 0 0 0 2px #2faa6e; }
+    .tl-item:nth-child(4) .tl-dot { background: #d93f87; box-shadow: 0 0 0 2px #d93f87; }
+    .tl-body { padding-left: 1.2rem; }
+    .tl-company { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .tl-role { font-size: 0.85rem; font-weight: 500; color: var(--violet); margin-top: 0.15rem; }
+    .tl-desc { font-size: 0.83rem; color: var(--muted); margin-top: 0.4rem; max-width: 500px; line-height: 1.55; }
+
+    /* ════════════════════════════════
+       PROJECTS — EXPAND-ON-CLICK GRID
+    ════════════════════════════════ */
+    #experience { background: var(--bg); }
+
+    .flip-hint-global {
+      font-size: 0.82rem; color: var(--muted); font-style: italic; margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .flip-hint-global::before { content: '↕'; color: var(--violet); font-style: normal; font-size: 1rem; }
+
+    /* flat unified grid */
+    .pc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    /* card wrapper */
+    .pc-card {
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.25s, transform 0.2s;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .pc-card:hover { box-shadow: 0 6px 24px rgba(107,94,168,0.18); transform: translateY(-2px); }
+    .pc-card:active { transform: scale(0.98); }
+
+    /* collapsed state */
+    .pc-collapsed {
+      padding: 12px 14px 10px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* logo + company name row */
+    .pf-logo-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 7px;
+    }
+    .pf-logo {
+      width: 28px; height: 28px; border-radius: 7px;
+      object-fit: contain; background: rgba(255,255,255,0.7);
+      padding: 3px; flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .pf-company-name {
+      font-size: 0.75rem; font-weight: 700; color: inherit; line-height: 1.2;
+    }
+
+    /* sector tag line — NO duration here */
+    .pf-role-line {
+      font-size: 0.63rem; font-weight: 600; color: inherit;
+      opacity: 0.7; margin-bottom: 8px; padding-bottom: 7px;
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+    .card-navy .pf-role-line { border-bottom-color: rgba(255,255,255,0.2); }
+
+    /* full summary — no clamp, shows completely */
+    .pf-summary {
+      font-size: 0.78rem; font-weight: 600; color: inherit;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    /* duration at bottom of card — always visible */
+    .pf-duration {
+      margin-top: 8px;
+      font-size: 0.62rem; font-weight: 500;
+      opacity: 0.55; color: inherit;
+    }
+
+    /* tap cue */
+    .pf-expand-cue {
+      margin-top: 6px; font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      opacity: 0.4; text-align: right;
+      transition: opacity 0.2s;
+      pointer-events: none;
+    }
+    .pc-card:hover .pf-expand-cue { opacity: 0.7; }
+    .pf-expand-cue::after { content: ' ▾'; }
+    .pc-card.open .pf-expand-cue::after { content: ' ▴'; }
+
+    /* divider */
+    .pc-divider {
+      height: 1px; background: rgba(0,0,0,0.1);
+      margin: 0 14px;
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .card-navy .pc-divider { background: rgba(255,255,255,0.18); }
+    .pc-card.open .pc-divider { max-height: 2px; }
+
+    /* expanded panel — hidden by default, animates open */
+    .pc-expanded {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .pc-card.open .pc-expanded { max-height: 500px; }
+
+    .pc-expanded-inner {
+      padding: 10px 14px 14px;
+    }
+    .pd-brief {
+      font-size: 0.73rem; color: inherit; opacity: 0.88;
+      line-height: 1.55; margin-bottom: 10px;
+    }
+    .pd-impacts-label {
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 700; opacity: 0.55; margin-bottom: 5px;
+    }
+    .pd-impacts { list-style: none; }
+    .pd-impacts li {
+      font-size: 0.72rem; line-height: 1.4; color: inherit; opacity: 0.9;
+      padding-left: 14px; position: relative; margin-bottom: 4px;
+    }
+    .pd-impacts li::before {
+      content: '↑'; position: absolute; left: 0;
+      font-weight: 700; font-size: 0.68rem; opacity: 0.65;
+    }
+
+    /* ── per-card pastel backgrounds ── */
+    .card-navy     { background: #1e2d5e; color: #fff; }
+    .card-yellow   { background: #f9d94e; color: #2c2200; }
+    .card-sky      { background: #d6eaf8; color: #1a3a5e; }
+    .card-mint     { background: #d4f4e5; color: #0a3a24; }
+    .card-rose     { background: #fde8f2; color: #5e0a2e; }
+    .card-peach    { background: #fce8d3; color: #3e1a00; }
+    .card-lavender { background: #ede8ff; color: #2d1a6b; }
+    .card-teal     { background: #d4f4f4; color: #0a3030; }
+    .card-sage     { background: #e8f5e0; color: #1a3a0a; }
+    .card-coral    { background: #ffd6d6; color: #5e0a0a; }
+
+    /* ════════════════════════════════
+       ACHIEVEMENTS
+    ════════════════════════════════ */
+    #achievements { background: linear-gradient(135deg, #f3e8ff 0%, #e8f7ff 100%); }
+    .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .ach-col h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 2px solid var(--violet); }
+    .ach-item { display: flex; gap: 0.9rem; align-items: flex-start; margin-bottom: 0.85rem; padding: 0.9rem 1rem; background: var(--surface); border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 2px 8px rgba(107,94,168,0.06); }
+    .ach-bullet { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--violet), var(--teal)); color: #fff; font-size: 0.7rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ach-text { font-size: 0.86rem; color: var(--text); line-height: 1.5; }
+    .ach-text strong { color: var(--violet); font-weight: 600; }
+
+    /* ════════════════════════════════
+       FOOTER
+    ════════════════════════════════ */
+    footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 2.5rem; font-size: 0.82rem; }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    /* ════════════════════════════════
+       ANIMATIONS
+    ════════════════════════════════ */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(28px);} to { opacity:1; transform:translateY(0);} }
+    .hero-left > * { opacity:0; animation: fadeUp 0.65s forwards; }
+    .hero-left > *:nth-child(1) { animation-delay:0.1s; }
+    .hero-left > *:nth-child(2) { animation-delay:0.2s; }
+    .hero-left > *:nth-child(3) { animation-delay:0.3s; }
+    .hero-left > *:nth-child(4) { animation-delay:0.4s; }
+    .hero-left > *:nth-child(5) { animation-delay:0.5s; }
+
+    /* ════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════ */
+    @media (max-width: 960px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-contact-btn { display: none; }
+      #home { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .hero-left { padding: 4rem 2rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .ach-grid { grid-template-columns: 1fr; }
+      .timeline-wrap::before { left: 108px; }
+      .tl-item { grid-template-columns: 103px 32px 1fr; }
+      .pc-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 2.5rem 0.75rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+      .timeline-wrap::before { display: none; }
+      .tl-item { grid-template-columns: 1fr; }
+      .tl-dot-wrap { display: none; }
+      .tl-date { text-align: left; padding: 0 0 0.3rem; }
+      .tl-body { padding-left: 1rem; border-left: 3px solid var(--violet); }
+      /* 2-col card grid on mobile */
+      .pc-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .pc-collapsed { padding: 10px 12px; }
+      .pc-expanded { padding: 0 12px; }
+      .pc-card.open .pc-expanded { padding: 0 12px 10px; }
+      .pc-divider { margin: 0 12px; }
+      .pf-logo { width: 22px; height: 22px; }
+      .pf-company-name { font-size: 0.68rem; }
+      .pf-role-line { font-size: 0.6rem; }
+      .pf-summary { font-size: 0.73rem; }
+      .pd-brief { font-size: 0.68rem; }
+      .pd-impacts li { font-size: 0.67rem; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-    <nav class="glass-nav fixed top-0 w-full z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="font-extrabold text-xl text-blue-600">AA</div>
-            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-slate-600">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#achievements" class="hover:text-blue-600 transition">Achievements</a>
-                <a href="mailto:arpitagrawal1102@gmail.com" class="text-blue-600 lowercase font-normal border-b border-transparent hover:border-blue-600 transition">arpitagrawal1102@gmail.com</a>
-            </div>
+<!-- ══════════ NAV ══════════ -->
+<nav>
+  <a class="nav-logo" href="#home">AA.</a>
+  <div class="nav-right">
+    <a href="mailto:arpitagrawal1102@gmail.com" class="nav-contact-btn">Get in Touch</a>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- SLIDE-IN MENU -->
+<div class="menu-overlay" id="menuOverlay">
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-panel">
+    <p class="menu-label">Navigate</p>
+    <ul class="menu-nav">
+      <li><a href="#home"         class="menu-link">Home</a></li>
+      <li><a href="#skills"       class="menu-link">Skills</a></li>
+      <li><a href="#timeline"     class="menu-link">Career Path</a></li>
+      <li><a href="#experience"   class="menu-link">Projects</a></li>
+      <li><a href="#achievements" class="menu-link">Achievements</a></li>
+    </ul>
+    <a href="mailto:arpitagrawal1102@gmail.com" class="menu-contact-btn menu-link">✉ Get in Touch</a>
+    <p class="menu-footer">arpitagrawal1102@gmail.com<br/>+91-9927081879</p>
+  </div>
+</div>
+
+<!-- ══════════ HERO ══════════ -->
+<section id="home">
+  <div class="hero-left">
+    <div class="hero-tag">Growth &amp; Operations Transformation</div>
+    <h1 class="hero-name">Arpit<br/><span>Agrawal</span></h1>
+    <p class="hero-title">Consultant · Strategist · Problem Solver</p>
+    <p class="hero-bio">Seasoned consultant with 8+ years driving growth, operational excellence and product innovation through digital transformation and AI. Specialist in Financial Services — Broking &amp; Insurance.</p>
+    <div class="hero-stats">
+      <div><div class="stat-num">8+</div><div class="stat-label">Years Exp.</div></div>
+      <div><div class="stat-num">4</div><div class="stat-label">Companies</div></div>
+      <div><div class="stat-num">10+</div><div class="stat-label">Projects</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="contact-box">
+      <h3>Contact Details</h3>
+      <div class="contact-row"><div class="contact-icon">✉</div><span>arpitagrawal1102@gmail.com</span></div>
+      <div class="contact-row"><div class="contact-icon">📞</div><span>+91-9927081879</span></div>
+      <div class="contact-row"><div class="contact-icon">📍</div><span>India</span></div>
+    </div>
+    <div class="edu-box">
+      <p>Education</p>
+      <strong>B.Tech — IIT Roorkee</strong><br/>
+      <span style="color:rgba(255,255,255,0.7);font-size:0.82rem;">Batch of 2017</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section id="skills">
+  <div class="section-label">Core Competencies</div>
+  <h2 class="section-title">What I Bring<br/>to the Table</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><div class="skill-num">01</div><div class="skill-name">Business Analysis</div><div class="skill-desc">Deep-dive diagnostics, benchmarking, and evidence-based strategy formulation.</div></div>
+    <div class="skill-card"><div class="skill-num">02</div><div class="skill-name">Digital &amp; AI Transformation</div><div class="skill-desc">End-to-end program management of digital products powered by AI interventions.</div></div>
+    <div class="skill-card"><div class="skill-num">03</div><div class="skill-name">Growth Strategy &amp; Innovation</div><div class="skill-desc">Designing scalable growth frameworks, referral programs, and GTM strategies.</div></div>
+    <div class="skill-card"><div class="skill-num">04</div><div class="skill-name">Operating Model Design</div><div class="skill-desc">Structuring future-state operating models aligned to business goals and transformation roadmaps.</div></div>
+    <div class="skill-card"><div class="skill-num">05</div><div class="skill-name">Journey &amp; Product Design</div><div class="skill-desc">Customer journey re-engineering, wireframing, UI/UX guidelines, and product backlog management.</div></div>
+    <div class="skill-card"><div class="skill-num">06</div><div class="skill-name">Cost Optimisation &amp; Change Mgmt</div><div class="skill-desc">Identifying operational leakages, driving synergy savings, and managing change adoption.</div></div>
+  </div>
+</section>
+
+<!-- ══════════ TIMELINE ══════════ -->
+<section id="timeline">
+  <div class="section-label">Career Path</div>
+  <h2 class="section-title">My Journey<br/>So Far</h2>
+  <div class="timeline-wrap">
+    <div class="tl-item">
+      <div class="tl-date"><div class="tl-date-main">Feb 2022</div><div class="tl-date-sub">Present</div></div>
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-company">KPMG India</div>
+        <div class="tl-role">Manager — Business Consulting (Customer &amp; Operations, FS)</div>
+        <div class="tl-desc">Leading strategic consulting engagements in insurance, banking and auto-finance across operating model design, digital transformation and cost optimisation.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date"><div class="tl-date-main">Jul 2021</div><div class="tl-date-sub">Feb 2022</div></div>
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-company">Kotak Securities</div>
+        <div class="tl-role">Associate Vice President — Products &amp; Special Projects</div>
+        <div class="tl-desc">Drove DIY account opening optimisation and built the influencer marketing program from scratch as a new growth acquisition lever.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date"><div class="tl-date-main">Apr 2019</div><div class="tl-date-sub">Jul 2021</div></div>
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-company">Angel One</div>
+        <div class="tl-role">Senior Manager — Digital Strategy &amp; Transformation (Growth)</div>
+        <div class="tl-desc">Transformed the referral program delivering 8X growth; pioneered vernacular language integration in trading app; drove MF &amp; insurance cross-sell digitisation.</div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-date"><div class="tl-date-main">Jul 2017</div><div class="tl-date-sub">Apr 2019</div></div>
+      <div class="tl-dot-wrap"><div class="tl-dot"></div></div>
+      <div class="tl-body">
+        <div class="tl-company">PwC India</div>
+        <div class="tl-role">Associate Consultant — Digital Transformation (FS)</div>
+        <div class="tl-desc">Designed and program-managed the first real-time paperless health insurance issuance platform in India for Reliance Health Insurance.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ PROJECTS ══════════ -->
+<section id="experience">
+  <div class="section-label">Project Portfolio</div>
+  <h2 class="section-title">Key Projects</h2>
+  <p class="flip-hint-global">Tap any card to expand details &amp; impact</p>
+
+  <div class="pc-grid">
+
+    <!-- 1 -->
+    <div class="pc-card card-navy">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/200px-KPMG_logo.svg.png" class="pf-logo" alt="KPMG" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+          <span class="pf-company-name">KPMG India</span>
         </div>
-    </nav>
+        <div class="pf-role-line">Insurance</div>
+        <div class="pf-summary">Distribution channel merger — InsuranceDekho &amp; RenewBuy</div>
+        <div class="pf-duration">⏱ 3 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Designed B2C &amp; B2B channel merger strategy and supporting operating model to unlock synergy across both organisations.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>₹32 Cr savings from distribution synergy</li>
+          <li>Capacity for up to 5X business growth</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <header class="h-screen flex items-center justify-center bg-white">
-        <div class="text-center px-6">
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-4">Hello. I'm <span class="text-blue-600">Arpit.</span></h1>
-            [span_2](start_span)<p class="text-xl md:text-2xl text-slate-500 font-light">Growth and Operations transformation specialist[span_2](end_span).</p>
+    <!-- 2 -->
+    <div class="pc-card card-sky">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/200px-KPMG_logo.svg.png" class="pf-logo" alt="KPMG" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+          <span class="pf-company-name">KPMG India</span>
         </div>
-    </header>
+        <div class="pf-role-line">Insurance</div>
+        <div class="pf-summary">BPR blueprint &amp; cost optimisation — Ageas Federal Life Insurance</div>
+        <div class="pf-duration">⏱ 4 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Analysed operations, benchmarked to industry leaders, designed future-state operating model with full transformation roadmap.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>Policy issuance TAT ↓ 40%</li>
+          <li>Claims TAT ↓ 70% · NPS ↑ 5 pts</li>
+          <li>₹50 Cr opex savings</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <section id="about" class="py-24 bg-white border-t border-slate-100">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold mb-8 text-blue-600">About Me</h2>
-            <div class="grid md:grid-cols-2 gap-12 text-slate-600 leading-relaxed">
-                <div>
-                    [span_3](start_span)<p class="mb-4">I am a seasoned consultant and problem solver with over 8+ years of experience in driving growth and product innovation powered by digital transformation and AI interventions[span_3](end_span).</p>
-                    [span_4](start_span)<p>I have a niche in the Financial Services industry, primarily focused on the Broking & Insurance landscape[span_4](end_span).</p>
-                </div>
-                <div class="space-y-4 text-sm font-semibold">
-                    [span_5](start_span)<p><i class="fas fa-graduation-cap mr-3 text-blue-500"></i> B. Tech, IIT Roorkee, Batch of 2017[span_5](end_span)</p>
-                    [span_6](start_span)<p><i class="fas fa-phone mr-3 text-blue-500"></i> +91-9927081879[span_6](end_span)</p>
-                    [span_7](start_span)<p><i class="fas fa-envelope mr-3 text-blue-500"></i> arpitagrawal1102@gmail.com[span_7](end_span)</p>
-                </div>
-            </div>
+    <!-- 3 -->
+    <div class="pc-card card-mint">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/200px-KPMG_logo.svg.png" class="pf-logo" alt="KPMG" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+          <span class="pf-company-name">KPMG India</span>
         </div>
-    </section>
+        <div class="pf-role-line">Banking</div>
+        <div class="pf-summary">5-year growth strategy — Utkarsh Small Finance Bank (Pre-IPO)</div>
+        <div class="pf-duration">⏱ 3 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Physical &amp; digital expansion strategy, GTM sourcing, customer journey redesign across assets &amp; liability products.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>Roadmap for 8X growth in 5 years</li>
+          <li>Sales productivity framework built</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <section id="skills" class="py-24 bg-slate-50">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-extrabold mb-12">My Skills</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                [span_8](start_span)<span class="px-6 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-bold text-slate-700">Digital & AI Transformation[span_8](end_span)</span>
-                [span_9](start_span)<span class="px-6 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-bold text-slate-700">Growth Strategy[span_9](end_span)</span>
-                [span_10](start_span)<span class="px-6 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-bold text-slate-700">Operating Model Designing[span_10](end_span)</span>
-                [span_11](start_span)<span class="px-6 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-bold text-slate-700">Cost Optimization[span_11](end_span)</span>
-                [span_12](start_span)<span class="px-6 py-2 bg-white border border-slate-200 rounded-full shadow-sm text-sm font-bold text-slate-700">Product Development[span_12](end_span)</span>
-            </div>
+    <!-- 4 -->
+    <div class="pc-card card-peach">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/KPMG_logo.svg/200px-KPMG_logo.svg.png" class="pf-logo" alt="KPMG" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+          <span class="pf-company-name">KPMG India</span>
         </div>
-    </section>
+        <div class="pf-role-line">Auto-Loan</div>
+        <div class="pf-summary">E2E auto-loan disbursement journey — Toyota Financial Services India</div>
+        <div class="pf-duration">⏱ 3M design + 12M implementation</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Designed DIY &amp; assisted sales journey; wireframes, UI/UX, business rules; program managed PWA with 15+ vendor partners.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>Avg disbursement TAT ↓ 3 days</li>
+          <li>Sales exec productivity ↑ 2 files/day</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <section id="experience" class="py-24 bg-white relative">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold mb-16 text-center">Professional Journey</h2>
-            <div class="relative timeline">
-                <div class="mb-12 flex flex-col md:flex-row items-center w-full">
-                    <div class="md:w-1/2 md:pr-12 md:text-right">
-                        <h3 class="font-bold text-lg">KPMG India</h3>
-                        <p class="text-blue-600 font-semibold">Manager, Business Consulting</p>
-                        <p class="text-xs text-slate-400">Feb 2022 – Present</p>
-                    </div>
-                    <div class="md:w-1/2 md:pl-12 mt-4 md:mt-0">
-                        <h3 class="font-bold text-lg">Kotak Securities</h3>
-                        <p class="text-blue-600 font-semibold">AVP, Products & Special Projects</p>
-                        <p class="text-xs text-slate-400">July 2021 – Feb 2022</p>
-                    </div>
-                </div>
-            </div>
+    <!-- 5 -->
+    <div class="pc-card card-yellow">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt="Kotak"/>
+          <span class="pf-company-name">Kotak Securities</span>
         </div>
-    </section>
+        <div class="pf-role-line">Product</div>
+        <div class="pf-summary">DIY DMAT account opening journey optimisation</div>
+        <div class="pf-duration">⏱ 6 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Product backlog refinement, drop-off funnel optimisation, and lead management improvements managed end-to-end.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>DIY lead-to-conversion rate ↑ 5%</li>
+          <li>Funnel drop-offs significantly reduced</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <section id="projects" class="py-24 bg-slate-900 text-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold mb-12 text-center">Key Projects</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="perspective-1000 h-80" onclick="this.querySelector('.card-inner').classList.toggle('is-flipped')">
-                    <div class="card-inner">
-                        <div class="card-front bg-white text-slate-900 shadow-xl border-t-4 border-blue-500">
-                            <div class="flex justify-between items-start">
-                                <p class="text-[10px] font-bold uppercase text-slate-400">KPMG India</p>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Gemini_language_model_logo.png" class="w-10 opacity-80" alt="Logo">
-                            </div>
-                            <h3 class="text-xl font-bold mt-8">Insurance Merger Strategy</h3>
-                            <p class="text-sm text-slate-500 mt-2">Merging distribution channels for InsuranceDekho & RenewBuy.</p>
-                            <p class="mt-auto text-blue-600 text-[10px] font-bold uppercase tracking-widest">Click to view details</p>
-                        </div>
-                        <div class="card-back bg-blue-600 text-white">
-                            <h4 class="font-bold mb-2 underline">Impact</h4>
-                            <ul class="text-sm space-y-2">
-                                [span_13](start_span)<li>• Savings of 32Cr from distribution synergy[span_13](end_span).</li>
-                                [span_14](start_span)<li>• Operational capacity building for 5X growth[span_14](end_span).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="perspective-1000 h-80" onclick="this.querySelector('.card-inner').classList.toggle('is-flipped')">
-                    <div class="card-inner">
-                        <div class="card-front bg-white text-slate-900 shadow-xl border-t-4 border-indigo-500">
-                            <div class="flex justify-between items-start">
-                                <p class="text-[10px] font-bold uppercase text-slate-400">KPMG India</p>
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Gemini_language_model_logo.png" class="w-10 opacity-80" alt="Logo">
-                            </div>
-                            <h3 class="text-xl font-bold mt-8">BPR & Cost Optimization</h3>
-                            <p class="text-sm text-slate-500 mt-2">Transforming Ageas Federal Life Insurance operations.</p>
-                            <p class="mt-auto text-indigo-600 text-[10px] font-bold uppercase tracking-widest">Click to view details</p>
-                        </div>
-                        <div class="card-back bg-indigo-600 text-white">
-                            <h4 class="font-bold mb-2 underline">Impact</h4>
-                            <ul class="text-sm space-y-2">
-                                [span_15](start_span)<li>• 70% reduction in claims settlement TAT[span_15](end_span).</li>
-                                [span_16](start_span)<li>• Savings of 50Cr in operational expenses[span_16](end_span).</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- 6 -->
+    <div class="pc-card card-lavender">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt="Kotak"/>
+          <span class="pf-company-name">Kotak Securities</span>
         </div>
-    </section>
+        <div class="pf-role-line">Growth</div>
+        <div class="pf-summary">Influencer marketing program — built from scratch as a new acquisition channel</div>
+        <div class="pf-duration">⏱ 3 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Designed complete program: reward construct, journeys, target market, ops unit setup, reward processing, and first-year roadmap.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>+10,000 new accounts via influencer channel</li>
+          <li>New growth arm launched from zero</li>
+        </ul>
+      </div></div>
+    </div>
 
-    <section id="achievements" class="py-24 bg-white">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-3xl font-extrabold mb-12">Achievements</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-4">
-                    <p class="text-blue-600 font-bold uppercase text-xs tracking-widest">Professional</p>
-                    [span_17](start_span)<p class="text-sm font-semibold text-slate-700">• Employee of the Year, CEO Award (Angel One)[span_17](end_span)</p>
-                    [span_18](start_span)<p class="text-sm font-semibold text-slate-700">• Above & Beyond Award (KPMG India)[span_18](end_span)</p>
-                </div>
-                <div class="space-y-4">
-                    <p class="text-slate-400 font-bold uppercase text-xs tracking-widest">Academic</p>
-                    [span_19](start_span)<p class="text-sm font-semibold text-slate-700">• IITJEE All India Rank – 4523[span_19](end_span)</p>
-                    [span_20](start_span)<p class="text-sm font-semibold text-slate-700">• Head (Events) – Thomso, IIT Roorkee[span_20](end_span)</p>
-                </div>
-            </div>
+    <!-- 7 -->
+    <div class="pc-card card-teal">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt="Angel One"/>
+          <span class="pf-company-name">Angel One</span>
         </div>
-    </section>
+        <div class="pf-role-line">Growth</div>
+        <div class="pf-summary">Referral program transformation — new customer acquisition engine</div>
+        <div class="pf-duration">⏱ 15 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Refined referral journeys &amp; dashboards; introduced DIY, automations, reward marketplace &amp; instant reward processing.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>Referral rate ↑ 8X</li>
+          <li>Referral sales contribution: 15% → 40%</li>
+        </ul>
+      </div></div>
+    </div>
 
+    <!-- 8 -->
+    <div class="pc-card card-sage">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt="Angel One"/>
+          <span class="pf-company-name">Angel One</span>
+        </div>
+        <div class="pf-role-line">Innovation</div>
+        <div class="pf-summary">Vernacular language integration — 8 Indian languages, first in industry</div>
+        <div class="pf-duration">⏱ 9 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Introduced 8 Indian native languages in core trading app and web, driving inclusion in Tier 3/4 city markets.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>↑ DIY account opening % in Tier 3/4 cities</li>
+          <li>First-in-industry vernacular milestone</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- 9 -->
+    <div class="pc-card card-mint">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://www.anthropic.com/favicon.ico" class="pf-logo" alt="Angel One"/>
+          <span class="pf-company-name">Angel One</span>
+        </div>
+        <div class="pf-role-line">Cross-sell</div>
+        <div class="pf-summary">Digital transformation — MF &amp; insurance cross-sell platform</div>
+        <div class="pf-duration">⏱ 12 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">DIY &amp; assisted sales journeys for Life &amp; Health insurance; MF sub-broker registration and activation platform.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>Insurance cross-sell ↑ 10%</li>
+          <li>MF onboarding TAT reduced</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <!-- 10 -->
+    <div class="pc-card card-rose">
+      <div class="pc-collapsed">
+        <div class="pf-logo-row">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/PricewaterhouseCoopers_Logo.svg/200px-PricewaterhouseCoopers_Logo.svg.png" class="pf-logo" alt="PwC" onerror="this.src='https://www.anthropic.com/favicon.ico'"/>
+          <span class="pf-company-name">PwC India</span>
+        </div>
+        <div class="pf-role-line">Insurance</div>
+        <div class="pf-summary">Real-time paperless health insurance issuance — Reliance Health Insurance</div>
+        <div class="pf-duration">⏱ 15 months</div>
+        <div class="pf-expand-cue">Details</div>
+      </div>
+      <div class="pc-divider"></div>
+      <div class="pc-expanded"><div class="pc-expanded-inner">
+        <p class="pd-brief">Designed full customer &amp; assisted sales journey; wireframes, UI/UX, business rules; program managed with 20+ vendor partners.</p>
+        <div class="pd-impacts-label">Impact</div>
+        <ul class="pd-impacts">
+          <li>First-in-industry real-time paperless issuance</li>
+          <li>20+ vendor integrations end-to-end</li>
+        </ul>
+      </div></div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ ACHIEVEMENTS ══════════ -->
+<section id="achievements">
+  <div class="section-label">Recognition</div>
+  <h2 class="section-title">Achievements</h2>
+  <div class="ach-grid">
+    <div class="ach-col">
+      <h3>Professional</h3>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Above &amp; Beyond Award for Strategy Blueprint project (Mar 2023)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Impact Award by Partner for Strategy Blueprint project (Nov 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>KPMG</strong> — Kudos Award for Implementation project at NSDL (Aug 2022)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>Angel One</strong> — Employee of the Year, CEO Award (Mar 2021)</div></div>
+      <div class="ach-item"><div class="ach-bullet">★</div><div class="ach-text"><strong>PwC India</strong> — R&amp;R Award for large-scale implementation project (2018)</div></div>
+    </div>
+    <div class="ach-col">
+      <h3>Pre-Professional</h3>
+      <div class="ach-item"><div class="ach-bullet">🎓</div><div class="ach-text"><strong>IIT Roorkee</strong> — Head of Events, Thomso Annual Cultural Festival (2015)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🏸</div><div class="ach-text">Winner — Intra-department Badminton Competition (2015, 2016)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🏆</div><div class="ach-text">Innovative Design Award — RC Car Racing, Cognizant, IIT Roorkee (2014)</div></div>
+      <div class="ach-item"><div class="ach-bullet">🎯</div><div class="ach-text">IIT JEE — All India Rank 4523 (General Category)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <p style="color:#fff;font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.4rem;">Arpit Agrawal</p>
+  <p>Growth &amp; Operations Transformation Specialist · IIT Roorkee '17</p>
+  <p style="margin-top:0.6rem;"><a href="mailto:arpitagrawal1102@gmail.com">arpitagrawal1102@gmail.com</a> &nbsp;·&nbsp; +91-9927081879</p>
+</footer>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const overlay   = document.getElementById('menuOverlay');
+  const backdrop  = document.getElementById('menuBackdrop');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  function openMenu()  { hamburger.classList.add('open'); overlay.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { hamburger.classList.remove('open'); overlay.classList.remove('open'); document.body.style.overflow = ''; }
+
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    overlay.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  backdrop.addEventListener('click', closeMenu);
+  menuLinks.forEach(l => l.addEventListener('click', closeMenu));
+
+  // Project cards — expand/collapse using event delegation on the grid
+  document.querySelector('.pc-grid').addEventListener('click', function(e) {
+    const card = e.target.closest('.pc-card');
+    if (!card) return;
+    const isOpen = card.classList.contains('open');
+    // close all open cards
+    document.querySelectorAll('.pc-card.open').forEach(c => c.classList.remove('open'));
+    // if card wasn't open, open it
+    if (!isOpen) card.classList.add('open');
+  });
+</script>
 </body>
 </html>
